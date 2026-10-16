@@ -1,0 +1,5 @@
+{
+  "_help": "Use this for TikTok until its API app is approved, or for any platform with no API. Copy a post block, fill it in, and update the numbers whenever you like; the daily job records them. Posts on a platform with a working API connection are ignored here.",
+  "channels": {},
+  "posts": []
+}

@@ -1,0 +1,9 @@
+{
+  "_help": "Optional fixes the APIs can't know. See README > Editing reviews. Delete the examples you don't need.",
+  "posts": {
+    "_example:tiktok:7420000000000000000": { "review": "karaoke-mic", "title": "Better title for this one post", "hidden": false }
+  },
+  "reviews": {
+    "_example-karaoke-mic": { "title": "This $35 karaoke mic survived family karaoke night", "product": "Karaoke mic", "productUrl": "https://amzn.to/xxxxxxx", "hidden": false }
+  }
+}
