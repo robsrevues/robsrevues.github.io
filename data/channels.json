@@ -1,1 +1,11 @@
-{}
+{
+  "youtube": {
+    "platform": "youtube",
+    "name": "Rob Armstrong",
+    "handle": "@robsrevues",
+    "url": "https://www.youtube.com/@robsrevues",
+    "followers": 1,
+    "followerLabel": "subs",
+    "updated": "2026-10-16"
+  }
+}
