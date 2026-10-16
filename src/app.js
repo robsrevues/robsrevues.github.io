@@ -17,7 +17,20 @@
   };
 
   // YouTube Shorts thumbnails: fall back to the standard one if the vertical one is missing.
-  const fallback = (img) => { if (img.dataset.fallback) { const f = img.dataset.fallback; img.removeAttribute('data-fallback'); img.src = f; } };
+  const fallback = (img) => {
+    if (!img.dataset.fallback) return;
+    const f = img.dataset.fallback;
+    img.removeAttribute('data-fallback');
+    img.src = f;
+    const box = img.parentElement;
+    if (box && box.classList.contains('rr-thumb')) {
+      // No vertical thumbnail exists, so this is a landscape video: show it whole.
+      box.classList.add('rr-thumb--wide');
+      img.classList.add('fit');
+      const bg = img.cloneNode(); bg.className = 'bg'; bg.setAttribute('aria-hidden', 'true');
+      box.insertBefore(bg, img);
+    }
+  };
   document.addEventListener('error', (e) => { if (e.target.tagName === 'IMG') fallback(e.target); }, true);
   document.addEventListener('load', (e) => { const i = e.target; if (i.tagName === 'IMG' && i.naturalWidth && i.naturalWidth <= 120) fallback(i); }, true);
 
