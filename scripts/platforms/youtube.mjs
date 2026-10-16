@@ -27,6 +27,15 @@ export async function fetchYouTube({ apiKey, handle }) {
     pageToken = page.nextPageToken;
   } while (pageToken);
 
+  // A video is a Short only if youtube.com/shorts/<id> serves it directly; regular
+  // videos redirect to /watch. Only checked for videos 3 minutes or shorter.
+  const isShort = async (id) => {
+    try {
+      const r = await fetch(`https://www.youtube.com/shorts/${id}`, { method: 'HEAD', redirect: 'manual' });
+      return r.status === 200;
+    } catch { return false; }
+  };
+
   const posts = [];
   for (let i = 0; i < ids.length; i += 50) {
     const batch = await api('videos', { part: 'snippet,statistics,contentDetails,status', id: ids.slice(i, i + 50).join(',') });
@@ -36,6 +45,7 @@ export async function fetchYouTube({ apiKey, handle }) {
       const durationSec = parseIsoDuration(v.contentDetails.duration);
       const t = v.snippet.thumbnails || {};
       const best = t.maxres || t.standard || t.high || t.medium || t.default || {};
+      const short = durationSec <= 180 && (await isShort(v.id));
       posts.push({
         key: `youtube:${v.id}`,
         platform: 'youtube',
@@ -46,10 +56,11 @@ export async function fetchYouTube({ apiKey, handle }) {
         description: v.snippet.description || '',
         publishedAt: v.snippet.publishedAt,
         durationSec,
-        // Shorts get a true vertical thumbnail; the page falls back to `thumb` if it 404s.
-        thumbVertical: durationSec <= 180 ? `https://i.ytimg.com/vi/${v.id}/oardefault.jpg` : null,
+        // Shorts get a true vertical thumbnail; landscape videos use the 16:9 one with no letterbox bars.
+        thumbVertical: short ? `https://i.ytimg.com/vi/${v.id}/oardefault.jpg` : null,
+        thumbWide: (t.maxres && t.maxres.url) || `https://i.ytimg.com/vi/${v.id}/mqdefault.jpg`,
         thumb: best.url || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
-        vertical: durationSec <= 180,
+        vertical: short,
         stats: {
           views: +v.statistics.viewCount || 0,
           likes: v.statistics.likeCount != null ? +v.statistics.likeCount : null,
