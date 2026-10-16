@@ -118,13 +118,14 @@ const reviews = groups.map((g) => {
   const weekVals = platforms.map((x) => x.week).filter((x) => x != null);
   const tt = g.posts.find((x) => x.platform === 'tiktok' && x.thumb);
   const yt = g.posts.find((x) => x.platform === 'youtube');
-  const thumb = ov.thumb || tt?.thumb || yt?.thumbVertical || g.posts.find((x) => x.thumb)?.thumb || null;
-  const thumbFallback = yt?.thumbVertical && thumb === yt.thumbVertical ? yt.thumb : null;
+  const thumb = ov.thumb || tt?.thumb || yt?.thumbVertical || yt?.thumbWide || g.posts.find((x) => x.thumb)?.thumb || null;
+  const thumbFallback = yt?.thumbVertical && thumb === yt.thumbVertical ? (yt.thumbWide || yt.thumb) : null;
+  const wide = !!yt && !ov.thumb && !tt?.thumb && !yt.thumbVertical;
   return {
     slug, title, description, productUrl, product: ov.product || null, published,
     isNew: (NOW - new Date(published)) / 3600000 <= 48,
     durationSec: g.posts.find((x) => x.durationSec)?.durationSec || null,
-    thumb, thumbFallback, tint: tintFor(slug), art: ov.product || title.split(/[:?.!]/)[0],
+    thumb, thumbFallback, wide, tint: tintFor(slug), art: ov.product || title.split(/[:?.!]/)[0],
     platforms,
     views: sum(platforms.map((x) => x.views)),
     likes: platforms.some((x) => x.likes != null) ? sum(platforms.map((x) => x.likes)) : null,
@@ -214,11 +215,14 @@ ${body}
 // ---------- home ----------
 function card(r, i) {
   const q = [r.title, r.product, r.description.slice(0, 300)].filter(Boolean).join(' ').toLowerCase().replace(/\s+/g, ' ');
-  const img = r.thumb
-    ? `<img src="${esc(r.thumb)}" alt="" width="360" height="640" ${i < 4 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"${r.thumbFallback ? ` data-fallback="${esc(r.thumbFallback)}"` : ''}>`
-    : `<span class="rr-thumb__art" style="background:${r.tint}">${esc(r.art)}</span>`;
+  const load = i < 4 ? 'fetchpriority="high"' : 'loading="lazy"';
+  const img = !r.thumb
+    ? `<span class="rr-thumb__art" style="background:${r.tint}">${esc(r.art)}</span>`
+    : r.wide
+      ? `<img class="bg" src="${esc(r.thumb)}" alt="" aria-hidden="true" ${load} decoding="async"><img class="fit" src="${esc(r.thumb)}" alt="" width="640" height="360" ${load} decoding="async">`
+      : `<img src="${esc(r.thumb)}" alt="" width="360" height="640" ${load} decoding="async"${r.thumbFallback ? ` data-fallback="${esc(r.thumbFallback)}"` : ''}>`;
   return `<article class="rr-card" data-slug="${r.slug}" data-platforms="${r.platforms.map((x) => x.platform).join(' ')}" data-date="${Date.parse(r.published)}" data-views="${r.views}" data-likes="${r.likes ?? 0}" data-week="${r.week ?? 0}" data-q="${esc(q)}">
-  <a class="rr-thumb" href="/reviews/${r.slug}/" data-open="${r.slug}" aria-label="${esc(r.title)}">${img}${r.isNew ? '<span class="rr-thumb__new">New</span>' : ''}${r.durationSec ? `<span class="rr-thumb__dur">${clock(r.durationSec)}</span>` : ''}<span class="rr-thumb__views">${icon.play}${compact(r.views)}<span class="sr-only"> views</span></span></a>
+  <a class="rr-thumb${r.wide && r.thumb ? ' rr-thumb--wide' : ''}" href="/reviews/${r.slug}/" data-open="${r.slug}" aria-label="${esc(r.title)}">${img}${r.isNew ? '<span class="rr-thumb__new">New</span>' : ''}${r.durationSec ? `<span class="rr-thumb__dur">${clock(r.durationSec)}</span>` : ''}<span class="rr-thumb__views">${icon.play}${compact(r.views)}<span class="sr-only"> views</span></span></a>
   <h3 class="rr-card__title"><a href="/reviews/${r.slug}/" data-open="${r.slug}">${esc(r.title)}</a></h3>
   <div class="rr-card__meta">${r.platforms.map((x) => `<span class="rr-chip rr-chip--bare rr-chip--${x.platform}" title="${pname(x.platform)}">${pshort(x.platform)}</span>`).join('')}<time datetime="${r.published}">${fmtDate(r.published)}</time></div>
   <div class="rr-card__stats">${r.likes != null ? `<span>${icon.heart}${statNum(r.likes)}<span class="sr-only"> likes</span></span>` : ''}${r.comments != null ? `<span>${icon.comment}${statNum(r.comments)}<span class="sr-only"> comments</span></span>` : ''}${r.week ? `<span class="rr-delta">+${compact(r.week)} wk</span>` : ''}</div>
@@ -232,7 +236,7 @@ function stat(label, value, delta) {
 const sheetData = reviews.map((r) => ({
   slug: r.slug, title: r.title, date: fullDate(r.published), productUrl: r.productUrl,
   description: r.description.replace(/https?:\/\/\S+/g, '').replace(/#[\p{L}\p{N}_]+/gu, '').replace(/\n{3,}/g, '\n\n').trim().slice(0, 700),
-  thumb: r.thumb, thumbFallback: r.thumbFallback,
+  thumb: r.thumb, thumbFallback: r.thumbFallback, wide: r.wide,
   platforms: r.platforms.map((x) => ({ platform: x.platform, name: pname(x.platform), url: x.url, embedUrl: x.embedUrl, vertical: x.vertical, views: x.views, likes: x.likes, comments: x.comments, week: x.week })),
   views: r.views, likes: r.likes, comments: r.comments, week: r.week,
 }));
@@ -322,7 +326,7 @@ function reviewPage(r) {
   <a class="page__crumb" href="/#reviews">${icon.back}All reviews</a>
   <div class="page__grid">
     <div class="page__media">
-      <div class="player" data-embed="${esc(cfg.embedPlayers ? first.embedUrl || '' : '')}" data-href="${esc(first.url)}">${thumb}<button class="player__play" type="button" aria-label="Play video">${icon.play}</button></div>
+      <div class="player${first.vertical ? '' : ' player--wide'}" data-embed="${esc(cfg.embedPlayers ? first.embedUrl || '' : '')}" data-href="${esc(first.url)}">${thumb}<button class="player__play" type="button" aria-label="Play video">${icon.play}</button></div>
     </div>
     <article class="page__body">
       <span class="rr-label">Review · <time datetime="${r.published}">${fullDate(r.published)}</time></span>
