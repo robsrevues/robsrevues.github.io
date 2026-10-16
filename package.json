@@ -1,0 +1,14 @@
+{
+  "name": "robsrevues",
+  "private": true,
+  "type": "module",
+  "description": "robsrevues.com — every Rob's Revues video from YouTube and TikTok, with stats updated daily.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "build": "node scripts/build.mjs",
+    "update": "node scripts/fetch.mjs && node scripts/build.mjs",
+    "sample": "node scripts/sample.mjs && node scripts/build.mjs --sample --preview",
+    "serve": "npx --yes serve@14.2.4 dist"
+  }
+}

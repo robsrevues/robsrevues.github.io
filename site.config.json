@@ -1,0 +1,19 @@
+{
+  "name": "Rob's Revues",
+  "url": "https://robsrevues.com",
+  "author": "Rob Armstrong",
+  "contactEmail": "",
+  "eyebrow": "Product reviews · new almost every day",
+  "lede": "Short, honest, family-friendly reviews of the stuff people actually buy. Every video from YouTube and TikTok in one place, with the numbers updated daily.",
+  "description": "Rob's Revues: short, honest, family-friendly product reviews on YouTube and TikTok. Every review in one place, with views, likes and comments updated daily.",
+  "aboutTitle": "I'm Rob. I buy things so you can skip the bad ones.",
+  "about": "I use everything around the house for real, with my family, then tell you whether it's worth your money. Most videos are under two minutes. Now and then I post something just for fun. Everything here stays family-friendly.",
+  "amazonTag": "",
+  "platforms": {
+    "youtube": { "enabled": true, "name": "YouTube", "handle": "@robsrevues", "url": "https://www.youtube.com/@robsrevues" },
+    "tiktok": { "enabled": true, "name": "TikTok", "handle": "@robsrevues", "url": "https://www.tiktok.com/@robsrevues" }
+  },
+  "embedPlayers": true,
+  "initialVisible": 20,
+  "pageSize": 20
+}
