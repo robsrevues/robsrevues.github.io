@@ -1,9 +1,12 @@
 {
-  "_help": "Optional fixes the APIs can't know. See README > Editing reviews. Delete the examples you don't need.",
+  "_help": "Optional fixes the APIs can't know. 'posts' keys are platform:videoId; 'review' groups posts into one review (its value becomes the page address /reviews/<value>/). See README > Editing reviews.",
   "posts": {
-    "_example:tiktok:7420000000000000000": { "review": "karaoke-mic", "title": "Better title for this one post", "hidden": false }
+    "youtube:d4fp5yZeoQU": { "review": "quick-review-of-rough-country-soft-top-tonneau-cover" },
+    "tiktok:7696927116683709710": { "review": "quick-review-of-rough-country-soft-top-tonneau-cover" },
+    "youtube:ZXM5s9ubKeU": { "review": "shure-sm58-microphone-review" },
+    "tiktok:7697304051314068749": { "review": "shure-sm58-microphone-review" },
+    "youtube:Enjp4mjuOOM": { "review": "my-quick-demonstration-of-the-fender-fct-2-clip-on-tuner" },
+    "tiktok:7696580809867676942": { "review": "my-quick-demonstration-of-the-fender-fct-2-clip-on-tuner" }
   },
-  "reviews": {
-    "_example-karaoke-mic": { "title": "This $35 karaoke mic survived family karaoke night", "product": "Karaoke mic", "productUrl": "https://amzn.to/xxxxxxx", "hidden": false }
-  }
+  "reviews": {}
 }
