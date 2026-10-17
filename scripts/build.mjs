@@ -101,11 +101,13 @@ const usedSlugs = new Set();
 const reviews = groups.map((g) => {
   g.posts.sort((a, b) => PLATFORM_ORDER.indexOf(a.platform) - PLATFORM_ORDER.indexOf(b.platform));
   const primary = g.posts[0];
-  const ov = (g.id && overrides.reviews?.[g.id]) || {};
-  const title = ov.title || cleanTitle(primary.title) || cleanTitle(g.posts.find((x) => cleanTitle(x.title))?.title) || ov.product || 'Untitled review';
-  let slug = g.id || slugify(ov.product || title);
+  const ovById = (g.id && overrides.reviews?.[g.id]) || {};
+  const title = ovById.title || cleanTitle(primary.title) || cleanTitle(g.posts.find((x) => cleanTitle(x.title))?.title) || ovById.product || 'Untitled review';
+  let slug = g.id || slugify(ovById.product || title);
   while (usedSlugs.has(slug)) slug += '-' + (usedSlugs.size + 1);
   usedSlugs.add(slug);
+  // Overrides can also be keyed by the review's slug (its page address).
+  const ov = { ...(overrides.reviews?.[slug] || {}), ...ovById };
   const description = g.posts.map((x) => x.description || '').sort((a, b) => b.length - a.length)[0] || '';
   const productUrl = ov.productUrl || g.posts.map((x) => productLink(x.description)).find(Boolean) || null;
   const published = g.posts.map((x) => x.publishedAt).sort()[0];
@@ -134,6 +136,8 @@ const reviews = groups.map((g) => {
     week: weekVals.length ? sum(weekVals) : null,
     weekLikes: sum(platforms.map((x) => x.weekLikes)), weekComments: sum(platforms.map((x) => x.weekComments)),
     hidden: !!ov.hidden,
+    // noindex: stays on the home page, but its own page is kept out of Google (non-review posts).
+    noindex: !!ov.noindex,
   };
 }).filter((r) => !r.hidden).sort((a, b) => b.published.localeCompare(a.published));
 
@@ -304,7 +308,7 @@ ${footer()}
 const homeLd = [
   { '@type': 'WebSite', '@id': SITE + '/#site', url: SITE + '/', name: cfg.name, description: cfg.description, publisher: { '@id': SITE + '/#org' } },
   orgLd, personLd,
-  { '@type': 'ItemList', name: `${cfg.name}: all reviews`, itemListElement: reviews.map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/reviews/${r.slug}/`, name: r.title })) },
+  { '@type': 'ItemList', name: `${cfg.name}: all reviews`, itemListElement: reviews.filter((r) => !r.noindex).map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/reviews/${r.slug}/`, name: r.title })) },
 ];
 const homeTitle = `${cfg.name} · Honest product reviews on ${enabledPlatforms.map(pname).join(' and ')}`;
 
@@ -360,7 +364,7 @@ ${footer()}
       { '@type': 'ListItem', position: 2, name: r.title, item: `${SITE}/reviews/${r.slug}/` },
     ] },
   ];
-  return doc({ title: `${r.title} · ${cfg.name}`, description: metaDesc, path: `/reviews/${r.slug}/`, ld, body, ogImage: absThumb(r), ogType: 'video.other' });
+  return doc({ title: `${r.title} · ${cfg.name}`, description: metaDesc, path: `/reviews/${r.slug}/`, ld, body, ogImage: absThumb(r), ogType: 'video.other', extraHead: r.noindex ? '<meta name="robots" content="noindex, follow">' : '' });
 }
 
 // ---------- legal pages ----------
@@ -404,7 +408,7 @@ function sitemap() {
   const x = (s) => esc(s);
   const urls = [
     `<url><loc>${SITE}/</loc><lastmod>${DAY}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>`,
-    ...reviews.map((r) => {
+    ...reviews.filter((r) => !r.noindex).map((r) => {
       const v = r.platforms[0];
       const video = v.embedUrl ? `<video:video><video:thumbnail_loc>${x(absThumb(r))}</video:thumbnail_loc><video:title>${x(r.title)}</video:title><video:description>${x((r.description.replace(/https?:\/\/\S+/g, '').replace(/\s+/g, ' ').trim() || r.title).slice(0, 2000))}</video:description><video:player_loc>${x(v.embedUrl.split('?')[0])}</video:player_loc>${v.durationSec ? `<video:duration>${Math.round(v.durationSec)}</video:duration>` : ''}<video:view_count>${r.views}</video:view_count><video:publication_date>${x(r.published)}</video:publication_date><video:family_friendly>yes</video:family_friendly></video:video>` : '';
       return `<url><loc>${SITE}/reviews/${r.slug}/</loc><lastmod>${DAY}</lastmod>${video}</url>`;
