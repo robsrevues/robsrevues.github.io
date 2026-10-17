@@ -8,5 +8,10 @@
     "youtube:Enjp4mjuOOM": { "review": "my-quick-demonstration-of-the-fender-fct-2-clip-on-tuner" },
     "tiktok:7696580809867676942": { "review": "my-quick-demonstration-of-the-fender-fct-2-clip-on-tuner" }
   },
-  "reviews": {}
+  "reviews": {
+    "im-fine": { "noindex": true },
+    "morning-thoughts": { "noindex": true },
+    "welcome-to-robs-revues": { "noindex": true },
+    "help": { "noindex": true }
+  }
 }
