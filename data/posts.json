@@ -1,5 +1,95 @@
 [
   {
+    "key": "tiktok:7698489481195752717",
+    "platform": "tiktok",
+    "id": "7698489481195752717",
+    "url": "https://www.tiktok.com/@robsrevues/video/7698489481195752717",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7698489481195752717",
+    "title": "Don't toast your bagels, fry them!",
+    "description": "Don't toast your bagels, fry them! #friedbagel #bagel #breakfast #breakfastideas #foodtok #cookinghacks",
+    "publishedAt": "2026-10-19T21:11:00.000Z",
+    "durationSec": 51,
+    "thumb": null,
+    "vertical": true,
+    "stats": {
+      "views": 102,
+      "likes": 3,
+      "comments": 0,
+      "shares": 0
+    },
+    "manual": true,
+    "firstSeen": "2026-10-19",
+    "lastSeen": "2026-10-19"
+  },
+  {
+    "key": "youtube:w76QPkNFZus",
+    "platform": "youtube",
+    "id": "w76QPkNFZus",
+    "url": "https://www.youtube.com/watch?v=w76QPkNFZus",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/w76QPkNFZus?autoplay=1&rel=0&playsinline=1",
+    "title": "Stop toasting your bagels — fry them instead",
+    "description": "Butter both sides, medium-high pan, and let it sizzle. Crispy on the outside, soft in the middle. It’s great plain, or go all in with cream cheese, lox and capers.\n\nMy mom taught me this one, and she swears she’s a bad cook. Thanks, Mom.\n\nWhat’s your go-to bagel topping? Tell me in the comments.\n\n#friedbagel #bagel  #breakfast  #breakfastideas  #lox #easyrecipes  #cookinghacks  #shorts",
+    "publishedAt": "2026-10-19T18:52:11Z",
+    "durationSec": 52,
+    "thumbVertical": "https://i.ytimg.com/vi/w76QPkNFZus/oardefault.jpg",
+    "thumbWide": "https://i.ytimg.com/vi/w76QPkNFZus/maxresdefault.jpg",
+    "thumb": "https://i.ytimg.com/vi/w76QPkNFZus/maxresdefault.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 262,
+      "likes": 5,
+      "comments": 0,
+      "shares": null
+    },
+    "firstSeen": "2026-10-19",
+    "lastSeen": "2026-10-19"
+  },
+  {
+    "key": "youtube:t5Zj1C1ZDFM",
+    "platform": "youtube",
+    "id": "t5Zj1C1ZDFM",
+    "url": "https://www.youtube.com/watch?v=t5Zj1C1ZDFM",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/t5Zj1C1ZDFM?autoplay=1&rel=0&playsinline=1",
+    "title": "4 years, same battery: Fender FCT-2 clip-on tuner",
+    "description": "Owned it 4+ years, still accurate, never changed the battery. Amazon 🔗 https://amzn.to/4jZh74u (paid link). As an Amazon Associate I earn from qualifying purchases.",
+    "publishedAt": "2026-10-19T15:00:31Z",
+    "durationSec": 76,
+    "thumbVertical": "https://i.ytimg.com/vi/t5Zj1C1ZDFM/oardefault.jpg",
+    "thumbWide": "https://i.ytimg.com/vi/t5Zj1C1ZDFM/maxresdefault.jpg",
+    "thumb": "https://i.ytimg.com/vi/t5Zj1C1ZDFM/maxresdefault.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 12,
+      "likes": 1,
+      "comments": 0,
+      "shares": null
+    },
+    "firstSeen": "2026-10-19",
+    "lastSeen": "2026-10-19"
+  },
+  {
+    "key": "tiktok:7698238645991492877",
+    "platform": "tiktok",
+    "id": "7698238645991492877",
+    "url": "https://www.tiktok.com/@robsrevues/photo/7698238645991492877",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7698238645991492877",
+    "title": "Take that trip you've been dreaming of",
+    "description": "Do it!! Take that trip you've been dreaming of. #BlessedNotStressed #travel #grandcanyon",
+    "publishedAt": "2026-10-19T04:57:00.000Z",
+    "durationSec": null,
+    "thumb": null,
+    "vertical": true,
+    "stats": {
+      "views": 14600,
+      "likes": 306,
+      "comments": 2,
+      "shares": 1
+    },
+    "manual": true,
+    "firstSeen": "2026-10-19",
+    "lastSeen": "2026-10-19"
+  },
+  {
     "key": "youtube:NCDqbQe-pCo",
     "platform": "youtube",
     "id": "NCDqbQe-pCo",
@@ -14,11 +104,55 @@
     "thumb": "https://i.ytimg.com/vi/NCDqbQe-pCo/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 39,
+      "views": 52,
       "likes": 0,
       "comments": 0,
       "shares": null
     },
+    "firstSeen": "2026-10-19",
+    "lastSeen": "2026-10-19"
+  },
+  {
+    "key": "tiktok:7697516004783557901",
+    "platform": "tiktok",
+    "id": "7697516004783557901",
+    "url": "https://www.tiktok.com/@robsrevues/video/7697516004783557901",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7697516004783557901",
+    "title": "Gift idea for the musician in your house: Shure SM58",
+    "description": "Been using the Shure SM58 at home with my keyboard and it’s built like a tank. Sounds great, feels even better in your hands and isn’t too expensive. It’s a solid #giftguide for the #musician in your house 🎤 #giftideas",
+    "publishedAt": "2026-10-17T06:14:00.000Z",
+    "durationSec": 59,
+    "thumb": null,
+    "vertical": true,
+    "stats": {
+      "views": 3,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0
+    },
+    "manual": true,
+    "firstSeen": "2026-10-19",
+    "lastSeen": "2026-10-19"
+  },
+  {
+    "key": "tiktok:7697445004222024974",
+    "platform": "tiktok",
+    "id": "7697445004222024974",
+    "url": "https://www.tiktok.com/@robsrevues/video/7697445004222024974",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7697445004222024974",
+    "title": "Shure SM58 Microphone Review",
+    "description": "Honest review of the Shure SM58. This is the mic me and my family use for karaoke and garage rock band practice 🎤 Built tough, sounds great. Heads up, P’s and T’s tend to pop up close so grab a foam windscreen if serious about recording. Link in bio. #ShureSM58 #microphone #karaoketiktok #homestudio #musicgear",
+    "publishedAt": "2026-10-17T01:38:00.000Z",
+    "durationSec": 119,
+    "thumb": null,
+    "vertical": true,
+    "stats": {
+      "views": 2,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0
+    },
+    "manual": true,
     "firstSeen": "2026-10-19",
     "lastSeen": "2026-10-19"
   },
@@ -35,8 +169,8 @@
     "thumb": "/thumbs/tiktok/7697325090538638606.jpg",
     "vertical": true,
     "stats": {
-      "views": 4,
-      "likes": 2,
+      "views": 5,
+      "likes": 3,
       "comments": 2,
       "shares": 0
     },
@@ -64,7 +198,8 @@
     },
     "manual": true,
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-19"
+    "lastSeen": "2026-10-19",
+    "removed": true
   },
   {
     "key": "tiktok:7696927116683709710",
@@ -108,7 +243,8 @@
     },
     "manual": true,
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-19"
+    "lastSeen": "2026-10-19",
+    "removed": true
   },
   {
     "key": "tiktok:7696580809867676942",
@@ -123,8 +259,8 @@
     "thumb": "/thumbs/tiktok/7696580809867676942.jpg",
     "vertical": true,
     "stats": {
-      "views": 11100,
-      "likes": 2243,
+      "views": 12800,
+      "likes": 2331,
       "comments": 4,
       "shares": 0
     },
@@ -190,10 +326,10 @@
     "thumb": "/thumbs/tiktok/7696209291421699342.jpg",
     "vertical": true,
     "stats": {
-      "views": 868,
-      "likes": 40,
+      "views": 1188,
+      "likes": 66,
       "comments": 7,
-      "shares": 3
+      "shares": 4
     },
     "manual": true,
     "firstSeen": "2026-10-16",
@@ -214,7 +350,7 @@
     "thumb": "https://i.ytimg.com/vi/ZXM5s9ubKeU/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 12,
+      "views": 14,
       "likes": 0,
       "comments": 1,
       "shares": null
