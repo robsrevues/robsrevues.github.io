@@ -1,17 +1,22 @@
 {
-  "_help": "Optional fixes the APIs can't know. 'posts' keys are platform:videoId; 'review' groups posts into one review (its value becomes the page address /reviews/<value>/). See README > Editing reviews.",
+  "_help": "Optional fixes the APIs can't know. 'posts' keys are platform:videoId; 'review' groups posts into one review (its value becomes the page address /reviews/<value>/). 'reviews' keys are those addresses; noindex keeps a non-review post on the home page but out of Google. See README > Editing reviews.",
   "posts": {
     "youtube:d4fp5yZeoQU": { "review": "quick-review-of-rough-country-soft-top-tonneau-cover" },
     "tiktok:7696927116683709710": { "review": "quick-review-of-rough-country-soft-top-tonneau-cover" },
     "youtube:ZXM5s9ubKeU": { "review": "shure-sm58-microphone-review" },
-    "tiktok:7697304051314068749": { "review": "shure-sm58-microphone-review" },
+    "tiktok:7697445004222024974": { "review": "shure-sm58-microphone-review" },
     "youtube:Enjp4mjuOOM": { "review": "my-quick-demonstration-of-the-fender-fct-2-clip-on-tuner" },
-    "tiktok:7696580809867676942": { "review": "my-quick-demonstration-of-the-fender-fct-2-clip-on-tuner" }
+    "tiktok:7696580809867676942": { "review": "my-quick-demonstration-of-the-fender-fct-2-clip-on-tuner" },
+    "youtube:NCDqbQe-pCo": { "review": "gift-idea-for-the-musician-in-your-house-shure-sm58" },
+    "tiktok:7697516004783557901": { "review": "gift-idea-for-the-musician-in-your-house-shure-sm58" },
+    "tiktok:7698489481195752717": { "review": "dont-toast-your-bagels-fry-them" },
+    "tiktok:7698238645991492877": { "review": "take-that-trip" }
   },
   "reviews": {
     "im-fine": { "noindex": true },
-    "morning-thoughts": { "noindex": true },
     "welcome-to-robs-revues": { "noindex": true },
-    "help": { "noindex": true }
+    "help": { "noindex": true },
+    "dont-toast-your-bagels-fry-them": { "noindex": true },
+    "take-that-trip": { "noindex": true }
   }
 }
