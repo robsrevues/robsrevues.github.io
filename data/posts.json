@@ -1,5 +1,28 @@
 [
   {
+    "key": "youtube:NCDqbQe-pCo",
+    "platform": "youtube",
+    "id": "NCDqbQe-pCo",
+    "url": "https://www.youtube.com/watch?v=NCDqbQe-pCo",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/NCDqbQe-pCo?autoplay=1&rel=0&playsinline=1",
+    "title": "Gift idea for the musician in your house: Shure SM58",
+    "description": "The mic on basically every stage, and it’s built like it. One catch: P’s and T’s pop up close. Amazon 🔗 https://amzn.to/47hOsQN (paid link). As an Amazon Associate I earn from qualifying purchases.",
+    "publishedAt": "2026-10-18T15:00:11Z",
+    "durationSec": 54,
+    "thumbVertical": "https://i.ytimg.com/vi/NCDqbQe-pCo/oardefault.jpg",
+    "thumbWide": "https://i.ytimg.com/vi/NCDqbQe-pCo/maxresdefault.jpg",
+    "thumb": "https://i.ytimg.com/vi/NCDqbQe-pCo/maxresdefault.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 39,
+      "likes": 0,
+      "comments": 0,
+      "shares": null
+    },
+    "firstSeen": "2026-10-19",
+    "lastSeen": "2026-10-19"
+  },
+  {
     "key": "tiktok:7697325090538638606",
     "platform": "tiktok",
     "id": "7697325090538638606",
@@ -19,7 +42,7 @@
     },
     "manual": true,
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-18"
+    "lastSeen": "2026-10-19"
   },
   {
     "key": "tiktok:7697304051314068749",
@@ -41,7 +64,7 @@
     },
     "manual": true,
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-18"
+    "lastSeen": "2026-10-19"
   },
   {
     "key": "tiktok:7696927116683709710",
@@ -63,7 +86,7 @@
     },
     "manual": true,
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-18"
+    "lastSeen": "2026-10-19"
   },
   {
     "key": "tiktok:7696884332044029197",
@@ -85,7 +108,7 @@
     },
     "manual": true,
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-18"
+    "lastSeen": "2026-10-19"
   },
   {
     "key": "tiktok:7696580809867676942",
@@ -107,7 +130,7 @@
     },
     "manual": true,
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-18"
+    "lastSeen": "2026-10-19"
   },
   {
     "key": "tiktok:7696390374167809293",
@@ -129,7 +152,7 @@
     },
     "manual": true,
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-18"
+    "lastSeen": "2026-10-19"
   },
   {
     "key": "youtube:d4fp5yZeoQU",
@@ -152,7 +175,7 @@
       "shares": null
     },
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-18"
+    "lastSeen": "2026-10-19"
   },
   {
     "key": "tiktok:7696209291421699342",
@@ -174,7 +197,7 @@
     },
     "manual": true,
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-18"
+    "lastSeen": "2026-10-19"
   },
   {
     "key": "youtube:ZXM5s9ubKeU",
@@ -191,13 +214,13 @@
     "thumb": "https://i.ytimg.com/vi/ZXM5s9ubKeU/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 9,
+      "views": 12,
       "likes": 0,
       "comments": 1,
       "shares": null
     },
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-18"
+    "lastSeen": "2026-10-19"
   },
   {
     "key": "youtube:Enjp4mjuOOM",
@@ -214,12 +237,12 @@
     "thumb": "https://i.ytimg.com/vi/Enjp4mjuOOM/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 21,
+      "views": 22,
       "likes": 0,
       "comments": 2,
       "shares": null
     },
     "firstSeen": "2026-10-16",
-    "lastSeen": "2026-10-18"
+    "lastSeen": "2026-10-19"
   }
 ]
