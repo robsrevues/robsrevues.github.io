@@ -36,7 +36,7 @@
     "thumb": "https://i.ytimg.com/vi/w76QPkNFZus/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 504,
+      "views": 506,
       "likes": 5,
       "comments": 0,
       "shares": null
@@ -59,7 +59,7 @@
     "thumb": "https://i.ytimg.com/vi/t5Zj1C1ZDFM/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 18,
+      "views": 21,
       "likes": 1,
       "comments": 0,
       "shares": null
@@ -99,12 +99,12 @@
     "description": "The mic on basically every stage, and it’s built like it. One catch: P’s and T’s pop up close. Amazon 🔗 https://amzn.to/47hOsQN (paid link). As an Amazon Associate I earn from qualifying purchases.",
     "publishedAt": "2026-10-18T15:00:11Z",
     "durationSec": 54,
-    "thumbVertical": "https://i.ytimg.com/vi/NCDqbQe-pCo/oardefault.jpg",
+    "thumbVertical": null,
     "thumbWide": "https://i.ytimg.com/vi/NCDqbQe-pCo/maxresdefault.jpg",
     "thumb": "https://i.ytimg.com/vi/NCDqbQe-pCo/maxresdefault.jpg",
-    "vertical": true,
+    "vertical": false,
     "stats": {
-      "views": 60,
+      "views": 66,
       "likes": 0,
       "comments": 0,
       "shares": null
