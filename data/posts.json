@@ -1,5 +1,28 @@
 [
   {
+    "key": "youtube:M0NIIDiKyco",
+    "platform": "youtube",
+    "id": "M0NIIDiKyco",
+    "url": "https://www.youtube.com/watch?v=M0NIIDiKyco",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/M0NIIDiKyco?autoplay=1&rel=0&playsinline=1",
+    "title": "Rough Country tonneau cover, 18 months later (F-150 Lightning)",
+    "description": "Easy install, keeps the rain out, a fraction of the big-brand price. One tip: check the seal in the middle, where it can roll. Amazon 🔗 https://amzn.to/4z67yG1 (paid link). As an Amazon Associate I earn from qualifying purchases.",
+    "publishedAt": "2026-10-20T15:00:00Z",
+    "durationSec": 69,
+    "thumbVertical": "https://i.ytimg.com/vi/M0NIIDiKyco/oardefault.jpg",
+    "thumbWide": "https://i.ytimg.com/vi/M0NIIDiKyco/maxresdefault.jpg",
+    "thumb": "https://i.ytimg.com/vi/M0NIIDiKyco/maxresdefault.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 1,
+      "likes": 0,
+      "comments": 0,
+      "shares": null
+    },
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20"
+  },
+  {
     "key": "tiktok:7698489481195752717",
     "platform": "tiktok",
     "id": "7698489481195752717",
@@ -36,8 +59,8 @@
     "thumb": "https://i.ytimg.com/vi/w76QPkNFZus/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 509,
-      "likes": 5,
+      "views": 510,
+      "likes": 6,
       "comments": 0,
       "shares": null
     },
