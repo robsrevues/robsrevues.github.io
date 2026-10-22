@@ -1,9 +1,50 @@
 {
   "_help": "TikTok posts entered by hand until the TikTok API app is approved. Update the numbers whenever you like; the daily job records them. Cover images download automatically. Posts on a platform with a working API connection are ignored here.",
   "channels": {
-    "tiktok": { "handle": "@robsrevues", "url": "https://www.tiktok.com/@robsrevues", "followers": 152, "followerLabel": "followers" }
+    "tiktok": {
+      "handle": "@robsrevues",
+      "url": "https://www.tiktok.com/@robsrevues",
+      "followers": 426,
+      "followerLabel": "followers"
+    }
   },
   "posts": [
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@robsrevues/video/7699365712480963854",
+      "title": "I needed a teleprompter app ASAP, so Claude built me one",
+      "description": "I needed a teleprompter app ASAP, Claude just built me one in minutes with a few prompts, directly where I write scripts for reviews! Check out my incoming review for the tree stand next 🌲 #teleprompter #claudeai #aitools #contentcreator #behindthescenes",
+      "date": "2026-10-22T08:00:00-05:00",
+      "durationSec": 54,
+      "views": 1,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@robsrevues/video/7699013734039047437",
+      "title": "Dry nose, cracked lips? HoMedics warm + cool mist humidifier — first impressions",
+      "description": "Dry nose and cracked lips season is here in the South 🍂 Trying the #homedicswarm + cool mist humidifier — 3-night verdict coming. #humidifier #dryair #homedics #samsclub #homeessential #productreview",
+      "date": "2026-10-21T19:20:00-05:00",
+      "durationSec": 72,
+      "views": 3,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@robsrevues/video/7698999814637325581",
+      "title": "Okay, still posting reviews",
+      "description": "#okay still posting reviews. #creatorsearchinsights",
+      "date": "2026-10-21T01:11:00-05:00",
+      "durationSec": 21,
+      "views": 23,
+      "likes": 2,
+      "comments": 1,
+      "shares": 2
+    },
     {
       "platform": "tiktok",
       "url": "https://www.tiktok.com/@robsrevues/video/7698489481195752717",
@@ -11,7 +52,10 @@
       "description": "Don't toast your bagels, fry them! #friedbagel #bagel #breakfast #breakfastideas #foodtok #cookinghacks",
       "date": "2026-10-19T16:11:00-05:00",
       "durationSec": 51,
-      "views": 102, "likes": 3, "comments": 0, "shares": 0
+      "views": 41900,
+      "likes": 257,
+      "comments": 4,
+      "shares": 1
     },
     {
       "platform": "tiktok",
@@ -19,16 +63,10 @@
       "title": "Take that trip you've been dreaming of",
       "description": "Do it!! Take that trip you've been dreaming of. #BlessedNotStressed #travel #grandcanyon",
       "date": "2026-10-18T23:57:00-05:00",
-      "views": 14600, "likes": 306, "comments": 2, "shares": 1
-    },
-    {
-      "platform": "tiktok",
-      "url": "https://www.tiktok.com/@robsrevues/video/7697516004783557901",
-      "title": "Gift idea for the musician in your house: Shure SM58",
-      "description": "Been using the Shure SM58 at home with my keyboard and it’s built like a tank. Sounds great, feels even better in your hands and isn’t too expensive. It’s a solid #giftguide for the #musician in your house 🎤 #giftideas",
-      "date": "2026-10-17T01:14:00-05:00",
-      "durationSec": 59,
-      "views": 3, "likes": 1, "comments": 0, "shares": 0
+      "views": 196100,
+      "likes": 905,
+      "comments": 7,
+      "shares": 8
     },
     {
       "platform": "tiktok",
@@ -37,7 +75,10 @@
       "description": "Honest review of the Shure SM58. This is the mic me and my family use for karaoke and garage rock band practice 🎤 Built tough, sounds great. Heads up, P’s and T’s tend to pop up close so grab a foam windscreen if serious about recording. Link in bio. #ShureSM58 #microphone #karaoketiktok #homestudio #musicgear",
       "date": "2026-10-16T20:38:00-05:00",
       "durationSec": 119,
-      "views": 2, "likes": 1, "comments": 0, "shares": 0
+      "views": 31,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0
     },
     {
       "platform": "tiktok",
@@ -46,7 +87,10 @@
       "description": "#imfine",
       "date": "2026-10-16T12:52:00-05:00",
       "durationSec": 8,
-      "views": 5, "likes": 3, "comments": 2, "shares": 0
+      "views": 34,
+      "likes": 4,
+      "comments": 2,
+      "shares": 0
     },
     {
       "platform": "tiktok",
@@ -55,7 +99,10 @@
       "description": "I've had this Rough Country soft top cover for my F-150 Lightning for about a year and half now, and can safely say that it is a great bang for your buck. It keeps most rain/water out of the bed, install was a BREEZE, and it's just a fraction of the price of some other \"bigger\" name brands. I highly recommend this product. Amazon 🔗 https://amzn.to/4z67yG1 #roughcountry #tonneaucover",
       "date": "2026-10-15T11:08:00-05:00",
       "durationSec": 70,
-      "views": 4, "likes": 1, "comments": 2, "shares": 0
+      "views": 28,
+      "likes": 1,
+      "comments": 2,
+      "shares": 0
     },
     {
       "platform": "tiktok",
@@ -64,7 +111,10 @@
       "description": "This is a quick demo/review of the Fender FCT-2 tuner that can easily clip on to your guitar, violin, bass, etc. I've personally owned this tuner for 4+ years and it's been fantastic and accurate. Bonus, I haven't had to change the battery yet! I would definitely recommend this tuner as an entry-level accessory for the beginning musician. Amazon 🔗 https://amzn.to/4jZh74u #reviews #fender #guitar",
       "date": "2026-10-14T12:44:00-05:00",
       "durationSec": 116,
-      "views": 12800, "likes": 2331, "comments": 4, "shares": 0
+      "views": 19800,
+      "likes": 2334,
+      "comments": 4,
+      "shares": 0
     },
     {
       "platform": "tiktok",
@@ -72,7 +122,10 @@
       "title": "Welcome to Rob's ReVUEs",
       "description": "Short, honest product reviews from someone who actually owns and uses the stuff. Here's why you should buy it, and here's why you maybe shouldn't. No fluff, no scripts, just a real opinion from a real owner. Music, home office, home theater, sports and recreation, home and kitchen. Some videos include affiliate links, and I'll always let you know when they do.",
       "date": "2026-10-14T00:25:00-05:00",
-      "views": 28500, "likes": 599, "comments": 4, "shares": 2
+      "views": 28500,
+      "likes": 599,
+      "comments": 4,
+      "shares": 2
     },
     {
       "platform": "tiktok",
@@ -81,7 +134,10 @@
       "description": "Help #careertipstiktokcontest",
       "date": "2026-10-13T12:42:00-05:00",
       "durationSec": 6,
-      "views": 1188, "likes": 66, "comments": 7, "shares": 4
+      "views": 1233,
+      "likes": 67,
+      "comments": 7,
+      "shares": 4
     }
   ]
 }
