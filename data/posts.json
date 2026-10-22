@@ -1,5 +1,27 @@
 [
   {
+    "key": "tiktok:7699365712480963854",
+    "platform": "tiktok",
+    "id": "7699365712480963854",
+    "url": "https://www.tiktok.com/@robsrevues/video/7699365712480963854",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7699365712480963854",
+    "title": "I needed a teleprompter app ASAP, so Claude built me one",
+    "description": "I needed a teleprompter app ASAP, Claude just built me one in minutes with a few prompts, directly where I write scripts for reviews! Check out my incoming review for the tree stand next 🌲 #teleprompter #claudeai #aitools #contentcreator #behindthescenes",
+    "publishedAt": "2026-10-22T13:00:00.000Z",
+    "durationSec": 54,
+    "thumb": null,
+    "vertical": true,
+    "stats": {
+      "views": 1,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0
+    },
+    "manual": true,
+    "firstSeen": "2026-10-22",
+    "lastSeen": "2026-10-22"
+  },
+  {
     "key": "youtube:qe4jJw6nCK0",
     "platform": "youtube",
     "id": "qe4jJw6nCK0",
@@ -23,6 +45,28 @@
     "lastSeen": "2026-10-22"
   },
   {
+    "key": "tiktok:7699013734039047437",
+    "platform": "tiktok",
+    "id": "7699013734039047437",
+    "url": "https://www.tiktok.com/@robsrevues/video/7699013734039047437",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7699013734039047437",
+    "title": "Dry nose, cracked lips? HoMedics warm + cool mist humidifier — first impressions",
+    "description": "Dry nose and cracked lips season is here in the South 🍂 Trying the #homedicswarm + cool mist humidifier — 3-night verdict coming. #humidifier #dryair #homedics #samsclub #homeessential #productreview",
+    "publishedAt": "2026-10-22T00:20:00.000Z",
+    "durationSec": 72,
+    "thumb": null,
+    "vertical": true,
+    "stats": {
+      "views": 3,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0
+    },
+    "manual": true,
+    "firstSeen": "2026-10-22",
+    "lastSeen": "2026-10-22"
+  },
+  {
     "key": "youtube:CTKSpgw-hxs",
     "platform": "youtube",
     "id": "CTKSpgw-hxs",
@@ -37,12 +81,34 @@
     "thumb": "https://i.ytimg.com/vi/CTKSpgw-hxs/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 65,
+      "views": 67,
       "likes": 0,
       "comments": 0,
       "shares": null
     },
     "firstSeen": "2026-10-21",
+    "lastSeen": "2026-10-22"
+  },
+  {
+    "key": "tiktok:7698999814637325581",
+    "platform": "tiktok",
+    "id": "7698999814637325581",
+    "url": "https://www.tiktok.com/@robsrevues/video/7698999814637325581",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7698999814637325581",
+    "title": "Okay, still posting reviews",
+    "description": "#okay still posting reviews. #creatorsearchinsights",
+    "publishedAt": "2026-10-21T06:11:00.000Z",
+    "durationSec": 21,
+    "thumb": null,
+    "vertical": true,
+    "stats": {
+      "views": 23,
+      "likes": 2,
+      "comments": 1,
+      "shares": 2
+    },
+    "manual": true,
+    "firstSeen": "2026-10-22",
     "lastSeen": "2026-10-22"
   },
   {
@@ -60,7 +126,7 @@
     "thumb": "https://i.ytimg.com/vi/M0NIIDiKyco/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 151,
+      "views": 155,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -81,10 +147,10 @@
     "thumb": null,
     "vertical": true,
     "stats": {
-      "views": 102,
-      "likes": 3,
-      "comments": 0,
-      "shares": 0
+      "views": 41900,
+      "likes": 257,
+      "comments": 4,
+      "shares": 1
     },
     "manual": true,
     "firstSeen": "2026-10-19",
@@ -149,10 +215,10 @@
     "thumb": null,
     "vertical": true,
     "stats": {
-      "views": 14600,
-      "likes": 306,
-      "comments": 2,
-      "shares": 1
+      "views": 196100,
+      "likes": 905,
+      "comments": 7,
+      "shares": 8
     },
     "manual": true,
     "firstSeen": "2026-10-19",
@@ -201,7 +267,8 @@
     },
     "manual": true,
     "firstSeen": "2026-10-19",
-    "lastSeen": "2026-10-22"
+    "lastSeen": "2026-10-22",
+    "removed": true
   },
   {
     "key": "tiktok:7697445004222024974",
@@ -216,7 +283,7 @@
     "thumb": null,
     "vertical": true,
     "stats": {
-      "views": 2,
+      "views": 31,
       "likes": 1,
       "comments": 0,
       "shares": 0
@@ -238,8 +305,8 @@
     "thumb": "/thumbs/tiktok/7697325090538638606.jpg",
     "vertical": true,
     "stats": {
-      "views": 5,
-      "likes": 3,
+      "views": 34,
+      "likes": 4,
       "comments": 2,
       "shares": 0
     },
@@ -283,7 +350,7 @@
     "thumb": "/thumbs/tiktok/7696927116683709710.jpg",
     "vertical": true,
     "stats": {
-      "views": 4,
+      "views": 28,
       "likes": 1,
       "comments": 2,
       "shares": 0
@@ -328,8 +395,8 @@
     "thumb": "/thumbs/tiktok/7696580809867676942.jpg",
     "vertical": true,
     "stats": {
-      "views": 12800,
-      "likes": 2331,
+      "views": 19800,
+      "likes": 2334,
       "comments": 4,
       "shares": 0
     },
@@ -395,8 +462,8 @@
     "thumb": "/thumbs/tiktok/7696209291421699342.jpg",
     "vertical": true,
     "stats": {
-      "views": 1188,
-      "likes": 66,
+      "views": 1233,
+      "likes": 67,
       "comments": 7,
       "shares": 4
     },
@@ -442,7 +509,7 @@
     "thumb": "https://i.ytimg.com/vi/Enjp4mjuOOM/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 27,
+      "views": 26,
       "likes": 0,
       "comments": 2,
       "shares": null
