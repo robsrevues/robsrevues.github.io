@@ -1,6 +1,9 @@
 {
   "_help": "Optional fixes the APIs can't know. 'posts' keys are platform:videoId; 'review' groups posts into one review (its value becomes the page address /reviews/<value>/). 'reviews' keys are those addresses; noindex keeps a non-review post on the home page but out of Google. See README > Editing reviews.",
   "posts": {
+    "youtube:AlaLZjk5Abk": {
+      "hidden": true
+    },
     "youtube:d4fp5yZeoQU": {
       "review": "quick-review-of-rough-country-soft-top-tonneau-cover"
     },
