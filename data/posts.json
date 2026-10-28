@@ -1,5 +1,71 @@
 [
   {
+    "key": "tiktok:7701558278190288141",
+    "platform": "tiktok",
+    "id": "7701558278190288141",
+    "url": "https://www.tiktok.com/@robsrevues/video/7701558278190288141",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7701558278190288141",
+    "title": "Krinner Tree Genie XXL — third Christmas with this tree stand",
+    "description": "Third Christmas with this tree stand, and I’m never going back. Drop the trunk in, pump the pedal, and one cable pulls every claw in at once. Nobody on the floor wrestling bolts anymore. Size up the XXL fits trees up to 12 feet 🎄 Link in bio #christmastree #treestand #christmasdecor #amazonfinds",
+    "publishedAt": "2026-10-28T03:39:00.000Z",
+    "durationSec": 67,
+    "thumb": null,
+    "vertical": true,
+    "stats": {
+      "views": 1,
+      "likes": 1,
+      "comments": 0,
+      "shares": 1
+    },
+    "manual": true,
+    "firstSeen": "2026-10-27",
+    "lastSeen": "2026-10-27"
+  },
+  {
+    "key": "tiktok:7700646585763515662",
+    "platform": "tiktok",
+    "id": "7700646585763515662",
+    "url": "https://www.tiktok.com/@robsrevues/video/7700646585763515662",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7700646585763515662",
+    "title": "We shop at Sam's to save money",
+    "description": "We shop at Sam's to save money. 🐔🎄 #samsclub #samsclubhaul #christmas #couples",
+    "publishedAt": "2026-10-25T16:41:00.000Z",
+    "durationSec": 13,
+    "thumb": null,
+    "vertical": true,
+    "stats": {
+      "views": 5,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0
+    },
+    "manual": true,
+    "firstSeen": "2026-10-27",
+    "lastSeen": "2026-10-27"
+  },
+  {
+    "key": "tiktok:7699884561689283853",
+    "platform": "tiktok",
+    "id": "7699884561689283853",
+    "url": "https://www.tiktok.com/@robsrevues/video/7699884561689283853",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7699884561689283853",
+    "title": "She's always nervous before grooming",
+    "description": "She’s always nervous before ✨ 🐾🐩 #doodle #dog #dogsoftiktok #doggrooming",
+    "publishedAt": "2026-10-23T15:25:00.000Z",
+    "durationSec": 10,
+    "thumb": null,
+    "vertical": true,
+    "stats": {
+      "views": 8,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0
+    },
+    "manual": true,
+    "firstSeen": "2026-10-27",
+    "lastSeen": "2026-10-27"
+  },
+  {
     "key": "youtube:AlaLZjk5Abk",
     "platform": "youtube",
     "id": "AlaLZjk5Abk",
@@ -35,7 +101,7 @@
     "thumb": null,
     "vertical": true,
     "stats": {
-      "views": 1,
+      "views": 4,
       "likes": 0,
       "comments": 0,
       "shares": 0
@@ -80,7 +146,7 @@
     "thumb": null,
     "vertical": true,
     "stats": {
-      "views": 3,
+      "views": 8,
       "likes": 0,
       "comments": 0,
       "shares": 0
@@ -104,7 +170,7 @@
     "thumb": "https://i.ytimg.com/vi/CTKSpgw-hxs/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 97,
+      "views": 98,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -125,8 +191,8 @@
     "thumb": null,
     "vertical": true,
     "stats": {
-      "views": 23,
-      "likes": 2,
+      "views": 26,
+      "likes": 3,
       "comments": 1,
       "shares": 2
     },
@@ -306,7 +372,7 @@
     "thumb": null,
     "vertical": true,
     "stats": {
-      "views": 31,
+      "views": 32,
       "likes": 1,
       "comments": 0,
       "shares": 0
@@ -328,7 +394,7 @@
     "thumb": "/thumbs/tiktok/7697325090538638606.jpg",
     "vertical": true,
     "stats": {
-      "views": 34,
+      "views": 38,
       "likes": 4,
       "comments": 2,
       "shares": 0
@@ -373,7 +439,7 @@
     "thumb": "/thumbs/tiktok/7696927116683709710.jpg",
     "vertical": true,
     "stats": {
-      "views": 28,
+      "views": 31,
       "likes": 1,
       "comments": 2,
       "shares": 0
@@ -464,7 +530,7 @@
     "thumb": "https://i.ytimg.com/vi/d4fp5yZeoQU/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 41,
+      "views": 42,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -485,7 +551,7 @@
     "thumb": "/thumbs/tiktok/7696209291421699342.jpg",
     "vertical": true,
     "stats": {
-      "views": 1233,
+      "views": 1234,
       "likes": 67,
       "comments": 7,
       "shares": 4
