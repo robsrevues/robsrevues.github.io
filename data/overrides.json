@@ -42,6 +42,18 @@
     },
     "tiktok:7698999814637325581": {
       "review": "still-posting-reviews"
+    },
+    "youtube:qe4jJw6nCK0": {
+      "review": "krinner-tree-genie-xxl-my-3rd-christmas-with-this-tree-stand"
+    },
+    "tiktok:7701558278190288141": {
+      "review": "krinner-tree-genie-xxl-my-3rd-christmas-with-this-tree-stand"
+    },
+    "tiktok:7700646585763515662": {
+      "review": "sams-club-to-save-money"
+    },
+    "tiktok:7699884561689283853": {
+      "review": "nervous-before-grooming"
     }
   },
   "reviews": {
@@ -64,6 +76,12 @@
       "noindex": true
     },
     "still-posting-reviews": {
+      "noindex": true
+    },
+    "sams-club-to-save-money": {
+      "noindex": true
+    },
+    "nervous-before-grooming": {
       "noindex": true
     }
   }
