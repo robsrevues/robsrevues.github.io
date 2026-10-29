@@ -12,9 +12,9 @@
     "thumb": null,
     "vertical": true,
     "stats": {
-      "views": 1,
+      "views": 2,
       "likes": 1,
-      "comments": 0,
+      "comments": 1,
       "shares": 1
     },
     "manual": true,
@@ -306,7 +306,7 @@
     "vertical": true,
     "stats": {
       "views": 196100,
-      "likes": 905,
+      "likes": 904,
       "comments": 7,
       "shares": 8
     },
@@ -508,7 +508,7 @@
     "vertical": true,
     "stats": {
       "views": 28500,
-      "likes": 599,
+      "likes": 600,
       "comments": 4,
       "shares": 2
     },
