@@ -4,11 +4,23 @@
     "tiktok": {
       "handle": "@robsrevues",
       "url": "https://www.tiktok.com/@robsrevues",
-      "followers": 439,
+      "followers": 441,
       "followerLabel": "followers"
     }
   },
   "posts": [
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@robsrevues/video/7701935392295013645",
+      "title": "I got into the Amazon Influencer program today!",
+      "description": "#amazoninfluencer yo, I got in today!! Started my tik tok from nothing!! On to the next venture. Would LOVE to answer questions #laidoff #millennial #amazonfinds",
+      "date": "2026-10-28T23:03-05:00",
+      "durationSec": 54,
+      "views": 3,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0
+    },
     {
       "platform": "tiktok",
       "url": "https://www.tiktok.com/@robsrevues/video/7701558278190288141",
@@ -16,7 +28,7 @@
       "description": "Third Christmas with this tree stand, and I’m never going back. Drop the trunk in, pump the pedal, and one cable pulls every claw in at once. Nobody on the floor wrestling bolts anymore. Size up the XXL fits trees up to 12 feet 🎄 Link in bio #christmastree #treestand #christmasdecor #amazonfinds",
       "date": "2026-10-27T22:39-05:00",
       "durationSec": 67,
-      "views": 2,
+      "views": 5,
       "likes": 1,
       "comments": 1,
       "shares": 1

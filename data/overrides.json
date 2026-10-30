@@ -57,6 +57,9 @@
     },
     "tiktok:7699884561689283853": {
       "review": "nervous-before-grooming"
+    },
+    "tiktok:7701935392295013645": {
+      "review": "amazon-influencer-approved"
     }
   },
   "reviews": {
@@ -85,6 +88,9 @@
       "noindex": true
     },
     "nervous-before-grooming": {
+      "noindex": true
+    },
+    "amazon-influencer-approved": {
       "noindex": true
     }
   }
