@@ -1,5 +1,27 @@
 [
   {
+    "key": "tiktok:7701935392295013645",
+    "platform": "tiktok",
+    "id": "7701935392295013645",
+    "url": "https://www.tiktok.com/@robsrevues/video/7701935392295013645",
+    "embedUrl": "https://www.tiktok.com/embed/v2/7701935392295013645",
+    "title": "I got into the Amazon Influencer program today!",
+    "description": "#amazoninfluencer yo, I got in today!! Started my tik tok from nothing!! On to the next venture. Would LOVE to answer questions #laidoff #millennial #amazonfinds",
+    "publishedAt": "2026-10-29T04:03:00.000Z",
+    "durationSec": 54,
+    "thumb": "/thumbs/tiktok/7701935392295013645.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 3,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0
+    },
+    "manual": true,
+    "firstSeen": "2026-10-29",
+    "lastSeen": "2026-10-29"
+  },
+  {
     "key": "tiktok:7701558278190288141",
     "platform": "tiktok",
     "id": "7701558278190288141",
@@ -12,7 +34,7 @@
     "thumb": null,
     "vertical": true,
     "stats": {
-      "views": 2,
+      "views": 5,
       "likes": 1,
       "comments": 1,
       "shares": 1
@@ -171,7 +193,7 @@
     "thumb": "https://i.ytimg.com/vi/CTKSpgw-hxs/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 101,
+      "views": 102,
       "likes": 0,
       "comments": 0,
       "shares": null
