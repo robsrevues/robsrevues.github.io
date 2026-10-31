@@ -158,7 +158,7 @@ const follower = (k) => { const c = channels[k]; return c?.followers != null ? `
 function header(home) {
   const h = home ? '' : '/';
   return `<header class="site-header"><div class="wrap">
-  <a class="rr-wordmark" href="/" aria-label="${esc(cfg.name)} home">Rob's <span class="rr-mark">Revues</span></a>
+  <a class="brand" href="/" aria-label="${esc(cfg.name)} home"><img class="brand__photo" src="/rob.jpg" alt="" width="48" height="48"><span class="rr-wordmark">Rob's <span class="rr-mark">Revues</span></span></a>
   <nav aria-label="Site">
     <a class="rr-btn rr-btn--ghost rr-btn--sm" href="${h}#reviews">Reviews</a>
     <a class="rr-btn rr-btn--ghost rr-btn--sm" href="${h}#about">About</a>
@@ -180,7 +180,7 @@ const orgLd = {
   logo: SITE + '/icon-512.png', founder: { '@type': 'Person', '@id': SITE + '/#rob', name: cfg.author },
   sameAs: enabledPlatforms.map((k) => cfg.platforms[k].url),
 };
-const personLd = { '@type': 'Person', '@id': SITE + '/#rob', name: cfg.author, url: SITE + '/', sameAs: enabledPlatforms.map((k) => cfg.platforms[k].url) };
+const personLd = { '@type': 'Person', '@id': SITE + '/#rob', name: cfg.author, url: SITE + '/', image: SITE + '/rob.jpg', sameAs: enabledPlatforms.map((k) => cfg.platforms[k].url) };
 
 function doc({ title, description, path, ld, body, ogImage, ogType = 'website', extraHead = '' }) {
   const url = SITE + path;
