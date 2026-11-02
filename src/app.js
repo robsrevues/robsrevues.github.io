@@ -42,6 +42,11 @@
       const src = el.dataset.embed;
       if (!src) { const a = document.createElement('a'); a.href = el.dataset.href; a.target = '_blank'; a.rel = 'noopener'; a.click(); return; }
       el.innerHTML = '<iframe src="' + esc(src) + '" title="Video player" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      // TikTok sometimes throttles its embedded player ("ratelimit triggered") and the page can't see that
+      // inside the iframe, so always offer a way out under TikTok players.
+      if (/tiktok\.com/.test(src) && !(el.nextElementSibling && el.nextElementSibling.classList.contains('player__help'))) {
+        el.insertAdjacentHTML('afterend', '<p class="player__help">Video not loading? <a href="' + esc(el.dataset.href) + '" target="_blank" rel="noopener">Watch on TikTok</a></p>');
+      }
     });
   }
   document.querySelectorAll('.player').forEach(wirePlayer);

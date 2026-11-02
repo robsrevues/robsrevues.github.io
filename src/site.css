@@ -193,6 +193,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .player img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .player__play { position: absolute; inset: 0; margin: auto; width: 64px; height: 64px; border-radius: 50%; border: 0; background: var(--scrim); color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.player__help { margin: 8px 0 0; text-align: center; font-size: 14px; color: var(--ink-muted); }
+.player__help a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
 .player__play svg { width: 26px; height: 26px; }
 .sheet__desc { margin: 0; font: 400 15px/22px var(--font-sans); color: var(--ink-muted); white-space: pre-line; overflow-wrap: anywhere; max-height: 9.5em; overflow: auto; }
 .table-wrap { overflow-x: auto; }
