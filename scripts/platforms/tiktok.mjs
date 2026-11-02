@@ -59,7 +59,7 @@ export async function fetchTikTok({ clientKey, clientSecret, refreshToken, handl
         platform: 'tiktok',
         id: v.id,
         url: v.share_url || `https://www.tiktok.com/${handle}/video/${v.id}`,
-        embedUrl: `https://www.tiktok.com/embed/v2/${v.id}`,
+        embedUrl: `https://www.tiktok.com/player/v1/${v.id}?autoplay=1&rel=0&music_info=0&description=0`,
         title: v.title || desc.split('\n')[0],
         description: desc,
         publishedAt: new Date(v.create_time * 1000).toISOString(),

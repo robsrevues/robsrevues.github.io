@@ -42,7 +42,7 @@ export async function fetchManual() {
       platform: m.platform,
       id,
       url: m.url,
-      embedUrl: m.platform === 'tiktok' ? `https://www.tiktok.com/embed/v2/${id}` : m.platform === 'youtube' ? `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0` : null,
+      embedUrl: m.platform === 'tiktok' ? (/\/photo\//.test(m.url) ? `https://www.tiktok.com/embed/v2/${id}` : `https://www.tiktok.com/player/v1/${id}?autoplay=1&rel=0&music_info=0&description=0`) : m.platform === 'youtube' ? `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0` : null,
       title: m.title || '',
       description: m.description || '',
       publishedAt: new Date(m.date || Date.now()).toISOString(),
