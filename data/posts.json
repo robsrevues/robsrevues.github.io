@@ -148,7 +148,7 @@
     "thumb": "https://i.ytimg.com/vi/qe4jJw6nCK0/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 170,
+      "views": 175,
       "likes": 1,
       "comments": 0,
       "shares": null
@@ -193,7 +193,7 @@
     "thumb": "https://i.ytimg.com/vi/CTKSpgw-hxs/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 105,
+      "views": 108,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -510,7 +510,7 @@
       "views": 19800,
       "likes": 2334,
       "comments": 4,
-      "shares": 0
+      "shares": 1
     },
     "manual": true,
     "firstSeen": "2026-10-16",
@@ -530,7 +530,7 @@
     "vertical": true,
     "stats": {
       "views": 28500,
-      "likes": 600,
+      "likes": 599,
       "comments": 4,
       "shares": 2
     },
