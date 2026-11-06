@@ -60,6 +60,18 @@
     },
     "tiktok:7701935392295013645": {
       "review": "amazon-influencer-approved"
+    },
+    "tiktok:7704839208862616846": {
+      "review": "mippko-gooseneck-mic-attachment-2-year-review"
+    },
+    "youtube:ZXCi_7Deknw": {
+      "review": "mippko-gooseneck-mic-attachment-2-year-review"
+    },
+    "tiktok:7704554208850234638": {
+      "review": "wife-mic-feedback"
+    },
+    "tiktok:7704539712685346061": {
+      "review": "loving-the-community-support"
     }
   },
   "reviews": {
@@ -91,6 +103,12 @@
       "noindex": true
     },
     "amazon-influencer-approved": {
+      "noindex": true
+    },
+    "wife-mic-feedback": {
+      "noindex": true
+    },
+    "loving-the-community-support": {
       "noindex": true
     }
   }
