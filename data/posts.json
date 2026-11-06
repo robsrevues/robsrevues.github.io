@@ -37,11 +37,77 @@
     "thumb": "https://i.ytimg.com/vi/mo4VaE_4UXQ/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 2,
+      "views": 3,
       "likes": 0,
       "comments": 0,
       "shares": null
     },
+    "firstSeen": "2026-11-05",
+    "lastSeen": "2026-11-05"
+  },
+  {
+    "key": "tiktok:7704839208862616846",
+    "platform": "tiktok",
+    "id": "7704839208862616846",
+    "url": "https://www.tiktok.com/@robsrevues/video/7704839208862616846",
+    "embedUrl": "https://www.tiktok.com/player/v1/7704839208862616846?autoplay=1&rel=0&music_info=0&description=0",
+    "title": "Two years, almost daily — this gooseneck turns one mic stand into two",
+    "description": "Two years, almost daily — this gooseneck turns one mic stand into two. Link in bio. #micstand #homestudio #musicgear #productreview",
+    "publishedAt": "2026-11-05T23:51:00.000Z",
+    "durationSec": 178,
+    "thumb": "/thumbs/tiktok/7704839208862616846.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0
+    },
+    "manual": true,
+    "firstSeen": "2026-11-05",
+    "lastSeen": "2026-11-05"
+  },
+  {
+    "key": "tiktok:7704554208850234638",
+    "platform": "tiktok",
+    "id": "7704554208850234638",
+    "url": "https://www.tiktok.com/@robsrevues/video/7704554208850234638",
+    "embedUrl": "https://www.tiktok.com/player/v1/7704554208850234638?autoplay=1&rel=0&music_info=0&description=0",
+    "title": "Love you, babe. Thanks for the feedback",
+    "description": "#ugcproblems #ugc #mic #wife love you, babe. Thanks for the feedback ❤️✌️",
+    "publishedAt": "2026-11-05T05:26:00.000Z",
+    "durationSec": 21,
+    "thumb": "/thumbs/tiktok/7704554208850234638.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 0,
+      "likes": 0,
+      "comments": 1,
+      "shares": 1
+    },
+    "manual": true,
+    "firstSeen": "2026-11-05",
+    "lastSeen": "2026-11-05"
+  },
+  {
+    "key": "tiktok:7704539712685346061",
+    "platform": "tiktok",
+    "id": "7704539712685346061",
+    "url": "https://www.tiktok.com/@robsrevues/video/7704539712685346061",
+    "embedUrl": "https://www.tiktok.com/player/v1/7704539712685346061?autoplay=1&rel=0&music_info=0&description=0",
+    "title": "Loving the support and interacting with the community today",
+    "description": "I have been loving the support and interacting with the community today ✌️❤️ #ugc #amazoningluencerprogram #juststarting @Nate | UGC CREATOR & COACH",
+    "publishedAt": "2026-11-05T04:29:00.000Z",
+    "durationSec": 200,
+    "thumb": "/thumbs/tiktok/7704539712685346061.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 3,
+      "likes": 1,
+      "comments": 2,
+      "shares": 0
+    },
+    "manual": true,
     "firstSeen": "2026-11-05",
     "lastSeen": "2026-11-05"
   },
@@ -170,7 +236,7 @@
     "thumb": "/thumbs/tiktok/7699365712480963854.jpg",
     "vertical": true,
     "stats": {
-      "views": 5,
+      "views": 6,
       "likes": 0,
       "comments": 0,
       "shares": 0
