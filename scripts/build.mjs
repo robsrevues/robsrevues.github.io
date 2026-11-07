@@ -155,6 +155,26 @@ const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link 
 const enabledPlatforms = PLATFORM_ORDER.filter((k) => cfg.platforms[k].enabled);
 const follower = (k) => { const c = channels[k]; return c?.followers != null ? `${compact(c.followers)} ${c.followerLabel || 'followers'}` : cfg.platforms[k].handle; };
 
+const P = cfg.pitch || null;
+const mail = cfg.contactEmail ? `mailto:${cfg.contactEmail}?subject=${encodeURIComponent(`Working with ${cfg.name}`)}` : '';
+function pitchCta() {
+  if (!cfg.contactEmail) return '';
+  return `  <div class="hero__brands">
+    <p><strong>Brands:</strong> ${esc(P?.pitchLine || 'Reach me directly.')}</p>
+    <div class="hero__cta"><a class="rr-btn rr-btn--primary" href="${esc(mail)}">Work with me</a><a class="hero__email" href="${esc(mail)}">${esc(cfg.contactEmail)}</a></div>
+  </div>`;
+}
+function pitchPlayer() {
+  if (!P) return '';
+  return `  <div class="pitch">
+    <video id="pitch-video" controls preload="none" playsinline poster="${esc(P.poster)}" width="1600" height="900" aria-label="${esc(P.title)} (${Math.round(P.durationSec)} seconds)">
+      <source src="${esc(P.video)}" type="video/mp4">
+      <track kind="captions" src="${esc(P.captions)}" srclang="en" label="English" default>
+    </video>
+    <button class="pitch__play" type="button" hidden>${icon.play}<span>Watch my 1-minute intro</span></button>
+  </div>`;
+}
+
 function header(home) {
   const h = home ? '' : '/';
   return `<header class="site-header"><div class="wrap">
@@ -162,6 +182,7 @@ function header(home) {
   <nav aria-label="Site">
     <a class="rr-btn rr-btn--ghost rr-btn--sm" href="${h}#reviews">Reviews</a>
     <a class="rr-btn rr-btn--ghost rr-btn--sm" href="${h}#about">About</a>
+    ${cfg.contactEmail ? `<a class="rr-btn rr-btn--ghost rr-btn--sm work-btn" href="${h}#work-with-me">Work with me</a>` : ''}
     ${enabledPlatforms.map((k) => `<a class="rr-btn rr-btn--secondary rr-btn--sm platform-btn" href="${esc(cfg.platforms[k].url)}" rel="me noopener" target="_blank"><span class="rr-dot rr-dot--${k}"></span>${pname(k)}</a>`).join('\n    ')}
   </nav>
 </div></header>`;
@@ -178,6 +199,7 @@ function footer() {
 const orgLd = {
   '@type': 'Organization', '@id': SITE + '/#org', name: cfg.name, url: SITE + '/',
   logo: SITE + '/icon-512.png', founder: { '@type': 'Person', '@id': SITE + '/#rob', name: cfg.author },
+  ...(cfg.contactEmail ? { email: cfg.contactEmail, contactPoint: { '@type': 'ContactPoint', contactType: 'business inquiries', email: cfg.contactEmail } } : {}),
   sameAs: enabledPlatforms.map((k) => cfg.platforms[k].url),
 };
 const personLd = { '@type': 'Person', '@id': SITE + '/#rob', name: cfg.author, url: SITE + '/', image: SITE + '/rob.jpg', sameAs: enabledPlatforms.map((k) => cfg.platforms[k].url) };
@@ -254,7 +276,7 @@ function homeBody({ embeds }) {
     : `<p class="empty"><strong>The first reviews are on their way.</strong>Follow along on ${enabledPlatforms.map(pname).join(' and ')} in the meantime.</p>`;
   return `${header(true)}
 <main>
-<section class="hero"><div class="wrap">
+<section class="hero" id="work-with-me"><div class="wrap">
   <div class="hero__main">
     <span class="rr-label">${esc(cfg.eyebrow)}</span>
     <h1>Rob's <span class="rr-mark">Revues</span></h1>
@@ -262,7 +284,9 @@ function homeBody({ embeds }) {
     <div class="hero__platforms">
       ${enabledPlatforms.map((k) => `<a class="rr-platform" href="${esc(cfg.platforms[k].url)}" rel="me noopener" target="_blank"><span class="rr-dot rr-dot--${k}"></span><span style="min-width:0"><span class="rr-platform__name">${pname(k)}</span><span class="rr-platform__meta">${esc(follower(k))}</span></span></a>`).join('\n      ')}
     </div>
+${pitchCta()}
   </div>
+${pitchPlayer()}
   <div class="stats" aria-label="Channel totals">
     ${stat('Reviews', full(totals.reviews), totals.reviewsWeek ? `+${totals.reviewsWeek} this week` : '')}
     ${stat('Total views', statNum(totals.views), wk(totals.viewsWeek))}
@@ -308,6 +332,7 @@ ${footer()}
 const homeLd = [
   { '@type': 'WebSite', '@id': SITE + '/#site', url: SITE + '/', name: cfg.name, description: cfg.description, publisher: { '@id': SITE + '/#org' } },
   orgLd, personLd,
+  ...(P ? [{ '@type': 'VideoObject', name: P.title, description: P.description, thumbnailUrl: SITE + P.poster, contentUrl: SITE + P.video, uploadDate: P.uploaded, duration: `PT${Math.round(P.durationSec)}S`, author: { '@id': SITE + '/#rob' }, publisher: { '@id': SITE + '/#org' } }] : []),
   { '@type': 'ItemList', name: `${cfg.name}: all reviews`, itemListElement: reviews.filter((r) => !r.noindex).map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/reviews/${r.slug}/`, name: r.title })) },
 ];
 const homeTitle = `${cfg.name} · Honest product reviews on ${enabledPlatforms.map(pname).join(' and ')}`;
