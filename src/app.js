@@ -51,6 +51,18 @@
   }
   document.querySelectorAll('.player').forEach(wirePlayer);
 
+  // Brand pitch video: clean poster with one big "Watch" button; native controls once it plays.
+  const pv = document.getElementById('pitch-video');
+  const pb = document.querySelector('.pitch__play');
+  if (pv && pb) {
+    pv.removeAttribute('controls');
+    pb.hidden = false;
+    const start = () => { pb.hidden = true; pv.setAttribute('controls', ''); pv.play().catch(() => {}); pv.focus(); };
+    pb.addEventListener('click', start);
+    pv.addEventListener('click', () => { if (!pv.hasAttribute('controls')) start(); });
+    pv.addEventListener('play', () => { pb.hidden = true; pv.setAttribute('controls', ''); });
+  }
+
   const dataEl = document.getElementById('rr-data');
   if (!dataEl) return;
   const D = JSON.parse(dataEl.textContent);
