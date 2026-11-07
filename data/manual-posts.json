@@ -4,11 +4,23 @@
     "tiktok": {
       "handle": "@robsrevues",
       "url": "https://www.tiktok.com/@robsrevues",
-      "followers": 449,
+      "followers": 905,
       "followerLabel": "followers"
     }
   },
   "posts": [
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@robsrevues/video/7705208992548621582",
+      "title": "First UGC paid gig in the bag! Let’s gooo",
+      "description": "First #ugc paid gig in the bag! Let’s gooo #contentcreator #60secondsidehustle",
+      "date": "2026-11-06T17:46-06:00",
+      "durationSec": 79,
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0
+    },
     {
       "platform": "tiktok",
       "url": "https://www.tiktok.com/@robsrevues/video/7704839208862616846",
@@ -16,7 +28,7 @@
       "description": "Two years, almost daily — this gooseneck turns one mic stand into two. Link in bio. #micstand #homestudio #musicgear #productreview",
       "date": "2026-11-05T17:51-06:00",
       "durationSec": 178,
-      "views": 0,
+      "views": 3,
       "likes": 0,
       "comments": 0,
       "shares": 0
@@ -136,10 +148,10 @@
       "description": "Don't toast your bagels, fry them! #friedbagel #bagel #breakfast #breakfastideas #foodtok #cookinghacks",
       "date": "2026-10-19T16:11:00-05:00",
       "durationSec": 51,
-      "views": 41900,
-      "likes": 257,
+      "views": 46700,
+      "likes": 474,
       "comments": 4,
-      "shares": 1
+      "shares": 4
     },
     {
       "platform": "tiktok",
@@ -148,7 +160,7 @@
       "description": "Do it!! Take that trip you've been dreaming of. #BlessedNotStressed #travel #grandcanyon",
       "date": "2026-10-18T23:57:00-05:00",
       "views": 196100,
-      "likes": 904,
+      "likes": 905,
       "comments": 7,
       "shares": 8
     },
@@ -195,8 +207,8 @@
       "description": "This is a quick demo/review of the Fender FCT-2 tuner that can easily clip on to your guitar, violin, bass, etc. I've personally owned this tuner for 4+ years and it's been fantastic and accurate. Bonus, I haven't had to change the battery yet! I would definitely recommend this tuner as an entry-level accessory for the beginning musician. Amazon 🔗 https://amzn.to/4jZh74u #reviews #fender #guitar",
       "date": "2026-10-14T12:44:00-05:00",
       "durationSec": 116,
-      "views": 19800,
-      "likes": 2334,
+      "views": 24500,
+      "likes": 2610,
       "comments": 4,
       "shares": 1
     },

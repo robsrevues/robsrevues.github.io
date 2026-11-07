@@ -72,6 +72,9 @@
     },
     "tiktok:7704539712685346061": {
       "review": "loving-the-community-support"
+    },
+    "tiktok:7705208992548621582": {
+      "review": "first-ugc-paid-gig"
     }
   },
   "reviews": {
@@ -109,6 +112,9 @@
       "noindex": true
     },
     "loving-the-community-support": {
+      "noindex": true
+    },
+    "first-ugc-paid-gig": {
       "noindex": true
     }
   }
