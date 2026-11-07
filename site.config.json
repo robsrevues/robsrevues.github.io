@@ -2,16 +2,36 @@
   "name": "Rob's Revues",
   "url": "https://robsrevues.com",
   "author": "Rob Armstrong",
-  "contactEmail": "",
+  "contactEmail": "hello@robsrevues.com",
   "eyebrow": "Product reviews · new almost every day",
   "lede": "Short, honest, family-friendly reviews of the stuff people actually buy. Every video from YouTube and TikTok in one place, with the numbers updated daily.",
   "description": "Rob's Revues: short, honest, family-friendly product reviews on YouTube and TikTok. Every review in one place, with views, likes and comments updated daily.",
   "aboutTitle": "I'm Rob. I buy things so you can skip the bad ones.",
   "about": "I use everything around the house for real, with my family, then tell you whether it's worth your money. Most videos are under two minutes. Now and then I post something just for fun. Everything here stays family-friendly.",
+  "pitch": {
+    "video": "/media/rob-intro.mp4",
+    "poster": "/media/pitch-poster.jpg",
+    "captions": "/media/rob-intro.en.vtt",
+    "durationSec": 57,
+    "uploaded": "2026-11-07",
+    "title": "Rob's Revues: UGC for brands",
+    "description": "Rob Armstrong makes UGC videos for brands: reviews, demos, unboxings, testimonials and ads, filmed in 4K, vertical or horizontal, in a real home.",
+    "pitchLine": "I make UGC for brands: reviews, demos, unboxings, testimonials and ads. Filmed in 4K, vertical or horizontal. Reach me directly."
+  },
   "amazonTag": "",
   "platforms": {
-    "youtube": { "enabled": true, "name": "YouTube", "handle": "@robsrevues", "url": "https://www.youtube.com/@robsrevues" },
-    "tiktok": { "enabled": true, "name": "TikTok", "handle": "@robsrevues", "url": "https://www.tiktok.com/@robsrevues" }
+    "youtube": {
+      "enabled": true,
+      "name": "YouTube",
+      "handle": "@robsrevues",
+      "url": "https://www.youtube.com/@robsrevues"
+    },
+    "tiktok": {
+      "enabled": true,
+      "name": "TikTok",
+      "handle": "@robsrevues",
+      "url": "https://www.tiktok.com/@robsrevues"
+    }
   },
   "embedPlayers": true,
   "initialVisible": 20,
