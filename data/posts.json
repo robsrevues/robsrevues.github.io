@@ -1,5 +1,27 @@
 [
   {
+    "key": "tiktok:7705208992548621582",
+    "platform": "tiktok",
+    "id": "7705208992548621582",
+    "url": "https://www.tiktok.com/@robsrevues/video/7705208992548621582",
+    "embedUrl": "https://www.tiktok.com/player/v1/7705208992548621582?autoplay=1&rel=0&music_info=0&description=0",
+    "title": "First UGC paid gig in the bag! Let’s gooo",
+    "description": "First #ugc paid gig in the bag! Let’s gooo #contentcreator #60secondsidehustle",
+    "publishedAt": "2026-11-06T23:46:00.000Z",
+    "durationSec": 79,
+    "thumb": "/thumbs/tiktok/7705208992548621582.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0
+    },
+    "manual": true,
+    "firstSeen": "2026-11-06",
+    "lastSeen": "2026-11-06"
+  },
+  {
     "key": "youtube:ZXCi_7Deknw",
     "platform": "youtube",
     "id": "ZXCi_7Deknw",
@@ -58,7 +80,7 @@
     "thumb": "/thumbs/tiktok/7704839208862616846.jpg",
     "vertical": true,
     "stats": {
-      "views": 0,
+      "views": 3,
       "likes": 0,
       "comments": 0,
       "shares": 0
@@ -371,10 +393,10 @@
     "thumb": null,
     "vertical": true,
     "stats": {
-      "views": 41900,
-      "likes": 257,
+      "views": 46700,
+      "likes": 474,
       "comments": 4,
-      "shares": 1
+      "shares": 4
     },
     "manual": true,
     "firstSeen": "2026-10-19",
@@ -440,7 +462,7 @@
     "vertical": true,
     "stats": {
       "views": 196100,
-      "likes": 904,
+      "likes": 905,
       "comments": 7,
       "shares": 8
     },
@@ -619,8 +641,8 @@
     "thumb": "/thumbs/tiktok/7696580809867676942.jpg",
     "vertical": true,
     "stats": {
-      "views": 19800,
-      "likes": 2334,
+      "views": 24500,
+      "likes": 2610,
       "comments": 4,
       "shares": 1
     },
