@@ -452,6 +452,14 @@ await mkdir(OUT, { recursive: true });
 await cp(p('public'), OUT, { recursive: true });
 await put('index.html', doc({ title: homeTitle, description: cfg.description, path: '/', ld: homeLd, body: homeBody({ embeds: cfg.embedPlayers }) }));
 for (const r of reviews) await put(`reviews/${r.slug}/index.html`, reviewPage(r));
+
+// Old review addresses Google already knows -> their current page (overrides.json "redirects": { "old-slug": "new-slug" }).
+// GitHub Pages can't send real 301s; an instant meta refresh plus a canonical is what Google treats as a permanent redirect.
+for (const [from, to] of Object.entries(overrides.redirects || {})) {
+  if (reviews.some((r) => r.slug === from)) continue; // never shadow a live page
+  const target = `${SITE}/reviews/${to}/`;
+  await put(`reviews/${from}/index.html`, `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved · ${esc(cfg.name)}</title><link rel="canonical" href="${esc(target)}"><meta http-equiv="refresh" content="0; url=${esc(target)}"><script>location.replace(${JSON.stringify(target)}+location.hash)</script></head><body><p>This review moved to <a href="${esc(target)}">${esc(target)}</a>.</p></body></html>`);
+}
 await put('privacy/index.html', prosePage('/privacy/', 'Privacy policy', privacyHtml));
 await put('terms/index.html', prosePage('/terms/', 'Terms of service', termsHtml));
 await put('404.html', doc({ title: `Not found · ${cfg.name}`, description: cfg.description, path: '/404.html', ld: [orgLd], body: `${header(false)}<main class="page"><div class="wrap prose"><h1>That page isn't here.</h1><p>It may have moved. <a href="/">See every review</a>.</p></div></main>${footer()}` }));
