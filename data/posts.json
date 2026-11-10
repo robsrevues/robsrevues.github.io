@@ -1,5 +1,51 @@
 [
   {
+    "key": "youtube:49hdXoBtkCw",
+    "platform": "youtube",
+    "id": "49hdXoBtkCw",
+    "url": "https://www.youtube.com/watch?v=49hdXoBtkCw",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/49hdXoBtkCw?autoplay=1&rel=0&playsinline=1",
+    "title": "This sound machine plugs right into the wall #ad  #shorts",
+    "description": "Unboxing the Calm Me plug-in white noise machine. Full review after a few nights.\nLink: https://link.amazon/B0ew0zjLm\n#ad  As an Amazon Associate I earn from qualifying purchases.",
+    "publishedAt": "2026-11-10T20:46:48Z",
+    "durationSec": 55,
+    "thumbVertical": "https://i.ytimg.com/vi/49hdXoBtkCw/oardefault.jpg",
+    "thumbWide": "https://i.ytimg.com/vi/49hdXoBtkCw/maxresdefault.jpg",
+    "thumb": "https://i.ytimg.com/vi/49hdXoBtkCw/maxresdefault.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 1,
+      "likes": 0,
+      "comments": 0,
+      "shares": null
+    },
+    "firstSeen": "2026-11-10",
+    "lastSeen": "2026-11-10"
+  },
+  {
+    "key": "youtube:0ZwFeg0qlUU",
+    "platform": "youtube",
+    "id": "0ZwFeg0qlUU",
+    "url": "https://www.youtube.com/watch?v=0ZwFeg0qlUU",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/0ZwFeg0qlUU?autoplay=1&rel=0&playsinline=1",
+    "title": "Plug-In White Noise Machine Unboxing — Calm Me (Part 1)",
+    "description": "A sound machine that doesn't take up any space on your nightstand — it plugs straight into the wall. Unboxing the Calm Me plug-in white noise machine: 20 sounds (white, brown, fans, rain), a built-in night light, a timer, and it remembers your last setting.\n\nHaven't slept with it yet. Part 2, the full review, is coming after a few nights.\n\nGet it here: https://link.amazon/B0cXLv2fI\n\n#ad As an Amazon Associate I earn from qualifying purchases.\n\n#whitenoisemachine #soundmachine #unboxing",
+    "publishedAt": "2026-11-10T20:44:14Z",
+    "durationSec": 74,
+    "thumbVertical": null,
+    "thumbWide": "https://i.ytimg.com/vi/0ZwFeg0qlUU/maxresdefault.jpg",
+    "thumb": "https://i.ytimg.com/vi/0ZwFeg0qlUU/maxresdefault.jpg",
+    "vertical": false,
+    "stats": {
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": null
+    },
+    "firstSeen": "2026-11-10",
+    "lastSeen": "2026-11-10"
+  },
+  {
     "key": "youtube:pgPxMIUEno4",
     "platform": "youtube",
     "id": "pgPxMIUEno4",
@@ -352,7 +398,7 @@
     "thumb": "https://i.ytimg.com/vi/qe4jJw6nCK0/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 419,
+      "views": 421,
       "likes": 1,
       "comments": 0,
       "shares": null
@@ -802,7 +848,7 @@
     "thumb": "https://i.ytimg.com/vi/ZXM5s9ubKeU/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 95,
+      "views": 96,
       "likes": 0,
       "comments": 1,
       "shares": null
