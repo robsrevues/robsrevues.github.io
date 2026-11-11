@@ -75,6 +75,12 @@
     },
     "tiktok:7705208992548621582": {
       "review": "first-ugc-paid-gig"
+    },
+    "tiktok:7706044594277993741": {
+      "review": "first-tiktok-live"
+    },
+    "tiktok:7706031753093319949": {
+      "review": "first-tiktok-live-highlight"
     }
   },
   "reviews": {
@@ -115,6 +121,12 @@
       "noindex": true
     },
     "first-ugc-paid-gig": {
+      "noindex": true
+    },
+    "first-tiktok-live": {
+      "noindex": true
+    },
+    "first-tiktok-live-highlight": {
       "noindex": true
     }
   },
