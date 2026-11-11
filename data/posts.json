@@ -1,5 +1,51 @@
 [
   {
+    "key": "youtube:k-ew2KCrDdo",
+    "platform": "youtube",
+    "id": "k-ew2KCrDdo",
+    "url": "https://www.youtube.com/watch?v=k-ew2KCrDdo",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/k-ew2KCrDdo?autoplay=1&rel=0&playsinline=1",
+    "title": "Title: Slept with this plug-in sound machine — I’m sold #ad  #shorts",
+    "description": "Night one with the Calm Me plug-in sound machine. Part 1 (unboxing) is on the channel.\nLink: https://amzn.to/48HGst0\n#ad As an Amazon Associate I earn from qualifying purchases.",
+    "publishedAt": "2026-11-11T03:18:38Z",
+    "durationSec": 53,
+    "thumbVertical": "https://i.ytimg.com/vi/k-ew2KCrDdo/oardefault.jpg",
+    "thumbWide": "https://i.ytimg.com/vi/k-ew2KCrDdo/maxresdefault.jpg",
+    "thumb": "https://i.ytimg.com/vi/k-ew2KCrDdo/maxresdefault.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 1,
+      "likes": 0,
+      "comments": 0,
+      "shares": null
+    },
+    "firstSeen": "2026-11-10",
+    "lastSeen": "2026-11-10"
+  },
+  {
+    "key": "youtube:1KQNAnmSCr4",
+    "platform": "youtube",
+    "id": "1KQNAnmSCr4",
+    "url": "https://www.youtube.com/watch?v=1KQNAnmSCr4",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/1KQNAnmSCr4?autoplay=1&rel=0&playsinline=1",
+    "title": "Calm Me Plug-In Sound Machine Review — Night One: I’m Sold (Part 2)",
+    "description": "Part 2 of my Calm Me plug-in sound machine review. I slept with it last night, and I'm sold. It does its job, it's loud enough, and it plugs straight into the wall, so there's nothing cluttering the nightstand.\n\nOne heads-up for pet owners: I set it up next to my dog's bed and she ended up sleeping in the other room.\n\nIt comes with a USB-C cable if your outlet's in a weird spot — but no power brick, so you'll need one of your own.\n\nBonus: this is our new travel sound machine. Way less clunky than what we pack now.\n\nPart 1 (unboxing): https://www.youtube.com/watch?v=0ZwFeg0qlUU\nGet it here: https://amzn.to/48HGst0\n\n#ad As an Amazon Associate I earn from qualifying purchases.\n\n#whitenoisemachine #soundmachine #productreview",
+    "publishedAt": "2026-11-11T03:17:00Z",
+    "durationSec": 81,
+    "thumbVertical": null,
+    "thumbWide": "https://i.ytimg.com/vi/1KQNAnmSCr4/maxresdefault.jpg",
+    "thumb": "https://i.ytimg.com/vi/1KQNAnmSCr4/maxresdefault.jpg",
+    "vertical": false,
+    "stats": {
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": null
+    },
+    "firstSeen": "2026-11-10",
+    "lastSeen": "2026-11-10"
+  },
+  {
     "key": "youtube:49hdXoBtkCw",
     "platform": "youtube",
     "id": "49hdXoBtkCw",
@@ -14,7 +60,7 @@
     "thumb": "https://i.ytimg.com/vi/49hdXoBtkCw/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 16,
+      "views": 19,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -442,7 +488,7 @@
     "thumb": "https://i.ytimg.com/vi/qe4jJw6nCK0/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 429,
+      "views": 431,
       "likes": 1,
       "comments": 0,
       "shares": null
@@ -600,7 +646,7 @@
     "thumb": "https://i.ytimg.com/vi/t5Zj1C1ZDFM/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 176,
+      "views": 181,
       "likes": 1,
       "comments": 0,
       "shares": null
@@ -892,7 +938,7 @@
     "thumb": "https://i.ytimg.com/vi/ZXM5s9ubKeU/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 97,
+      "views": 99,
       "likes": 0,
       "comments": 1,
       "shares": null
