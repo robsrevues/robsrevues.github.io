@@ -81,6 +81,9 @@
     },
     "tiktok:7706031753093319949": {
       "review": "first-tiktok-live-highlight"
+    },
+    "tiktok:7707104077964004622": {
+      "review": "unbox-incoming-teaser"
     }
   },
   "reviews": {
@@ -127,6 +130,9 @@
       "noindex": true
     },
     "first-tiktok-live-highlight": {
+      "noindex": true
+    },
+    "unbox-incoming-teaser": {
       "noindex": true
     }
   },
