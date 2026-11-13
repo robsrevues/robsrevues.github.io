@@ -40,8 +40,25 @@ const cleanTitle = (s = '') => s.replace(/#[\p{L}\p{N}_]+/gu, '').replace(/\s{2,
 const TINTS = ['#ead9a6', '#c9d3de', '#cbd8cc', '#dccfc2', '#cdc8dc', '#dccaca', '#d6d0bd', '#c6d6d6'];
 const tintFor = (s) => TINTS[[...s].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7) % TINTS.length];
 
+// Description text for the site: drop links, hashtags, "#ad" and Amazon disclosure lines (the site shows its own
+// disclosure next to the Amazon button), and lead-ins like "Get it here:" that would be left hanging without the link.
+function cleanDesc(text = '') {
+  return text
+    .replace(/https?:\/\/\S+/g, '')
+    .replace(/#[\p{L}\p{N}_]+/gu, '')
+    .replace(/As an Amazon Associate I earn from qualifying purchases\.?/gi, '')
+    .replace(/\(paid link\)\.?/gi, '')
+    .split('\n')
+    .map((l) => l.replace(/\s+/g, ' ').trim())
+    .filter((l) => !l || !/^(get it here|link|amazon(\s*🔗)?|shop|buy( it)?( here)?|part \d+( \([^)]*\))?)\s*[:🔗]*\s*$/i.test(l) && !/^[\p{P}\p{S}\s]+$/u.test(l))
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function productLink(text = '') {
-  const m = text.match(/https?:\/\/(?:amzn\.to|a\.co|(?:www\.)?amazon\.com)\/[^\s)<>"']+/i);
+  // amzn.to and link.amazon are Amazon's affiliate short links; a.co and amazon.com are full or share links.
+  const m = text.match(/https?:\/\/(?:amzn\.to|link\.amazon|a\.co|(?:www\.)?amazon\.com)\/[^\s)<>"']+/i);
   if (!m) return null;
   let url = m[0].replace(/[.,]+$/, '');
   if (cfg.amazonTag && /amazon\.com/i.test(url) && !/[?&]tag=/.test(url)) url += (url.includes('?') ? '&' : '?') + 'tag=' + encodeURIComponent(cfg.amazonTag);
@@ -62,6 +79,7 @@ function weekGain(key, post, idx) {
 }
 
 const icon = {
+  cart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.25"/><circle cx="17" cy="19.5" r="1.25"/></svg>',
   play: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>',
   heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>',
   comment: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>',
@@ -257,7 +275,7 @@ function card(r, i) {
   <a class="rr-thumb${r.wide && r.thumb ? ' rr-thumb--wide' : ''}" href="/reviews/${r.slug}/" data-open="${r.slug}" aria-label="${esc(r.title)}">${img}${r.isNew ? '<span class="rr-thumb__new">New</span>' : ''}${r.durationSec ? `<span class="rr-thumb__dur">${clock(r.durationSec)}</span>` : ''}<span class="rr-thumb__views">${icon.play}${compact(r.views)}<span class="sr-only"> views</span></span></a>
   <h3 class="rr-card__title"><a href="/reviews/${r.slug}/" data-open="${r.slug}">${esc(r.title)}</a></h3>
   <div class="rr-card__meta">${r.platforms.map((x) => `<span class="rr-chip rr-chip--bare rr-chip--${x.platform}" title="${pname(x.platform)}">${pshort(x.platform)}</span>`).join('')}<time datetime="${r.published}">${fmtDate(r.published)}</time></div>
-  <div class="rr-card__stats">${r.likes != null ? `<span>${icon.heart}${statNum(r.likes)}<span class="sr-only"> likes</span></span>` : ''}${r.comments != null ? `<span>${icon.comment}${statNum(r.comments)}<span class="sr-only"> comments</span></span>` : ''}${r.week ? `<span class="rr-delta">+${compact(r.week)} wk</span>` : ''}</div>
+  <div class="rr-card__stats">${r.likes != null ? `<span>${icon.heart}${statNum(r.likes)}<span class="sr-only"> likes</span></span>` : ''}${r.comments != null ? `<span>${icon.comment}${statNum(r.comments)}<span class="sr-only"> comments</span></span>` : ''}${r.week ? `<span class="rr-delta">+${compact(r.week)} wk</span>` : ''}${r.productUrl ? `<span class="rr-card__buy">${icon.cart}Amazon<span class="sr-only"> link in review</span></span>` : ''}</div>
 </article>`;
 }
 
@@ -267,7 +285,7 @@ function stat(label, value, delta) {
 
 const sheetData = reviews.map((r) => ({
   slug: r.slug, title: r.title, date: fullDate(r.published), productUrl: r.productUrl,
-  description: r.description.replace(/https?:\/\/\S+/g, '').replace(/#[\p{L}\p{N}_]+/gu, '').replace(/\n{3,}/g, '\n\n').trim().slice(0, 700),
+  description: cleanDesc(r.description).slice(0, 700),
   thumb: r.thumb, thumbFallback: r.thumbFallback, wide: r.wide,
   platforms: r.platforms.map((x) => ({ platform: x.platform, name: pname(x.platform), url: x.url, embedUrl: x.embedUrl, vertical: x.vertical, views: x.views, likes: x.likes, comments: x.comments, week: x.week })),
   views: r.views, likes: r.likes, comments: r.comments, week: r.week,
