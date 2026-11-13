@@ -166,10 +166,18 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .toolbar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding-block: 12px; }
 .toolbar h2 { margin: 0 8px 0 0; font: 750 22px/26px var(--font-display); font-stretch: 110%; flex: 1 1 100%; display: flex; align-items: baseline; gap: 8px; }
 .toolbar h2 small { font: 400 13px/16px var(--font-mono); color: var(--ink-muted); }
+.toolbar .tabs { display: flex; gap: 20px; flex: 1 1 100%; margin-right: 8px; }
+.tabs button { position: relative; display: inline-flex; align-items: baseline; gap: 6px; min-height: 44px; padding: 0; border: 0; background: none; color: var(--ink-muted); font: 750 22px/26px var(--font-display); font-stretch: 110%; cursor: pointer; }
+.tabs button small { font: 400 13px/16px var(--font-mono); color: var(--ink-muted); }
+.tabs button:hover { color: var(--ink); }
+.tabs button[aria-pressed="true"] { color: var(--ink); }
+.tabs button[aria-pressed="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 3px; border-radius: 2px; background: currentColor; }
+.tabs button:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
 .toolbar .search { flex: 1 1 100%; }
 .toolbar .controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex: 1 1 100%; flex-wrap: wrap; row-gap: 8px; }
 @media (min-width: 900px) {
   .toolbar h2 { flex: 0 0 auto; }
+  .toolbar .tabs { flex: 0 0 auto; }
   .toolbar .search { flex: 1 1 260px; }
   .toolbar .controls { flex: 0 0 auto; gap: 16px; }
 }

@@ -77,12 +77,14 @@
     const q = document.getElementById('q');
     const sort = document.getElementById('sort');
     const segs = document.querySelectorAll('.rr-seg [data-platform]');
-    const state = { platform: 'all', q: '', sort: 'new', limit: D.initial };
+    const tabs = document.querySelectorAll('.tabs [data-tab]');
+    const state = { tab: 'reviews', platform: 'all', q: '', sort: 'new', limit: D.initial };
     const keyFor = { new: 'date', views: 'views', week: 'week', likes: 'likes' };
 
     const apply = () => {
       const words = state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
       const list = cards.filter((c) =>
+        c.dataset.tab === state.tab &&
         (state.platform === 'all' || c.dataset.platforms.split(' ').includes(state.platform)) &&
         words.every((w) => c.dataset.q.includes(w)));
       const k = keyFor[state.sort];
@@ -100,16 +102,25 @@
       segs.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.platform === pf)));
       apply();
     };
-    segs.forEach((b) => b.addEventListener('click', () => {
-      setPlatform(b.dataset.platform);
-      try { history.replaceState(null, '', b.dataset.platform === 'all' ? location.pathname : '#' + b.dataset.platform); } catch (_) {}
-    }));
+    const setTab = (tab) => {
+      state.tab = tab; state.limit = D.initial;
+      tabs.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.tab === tab)));
+      apply();
+    };
+    const syncHash = () => {
+      const parts = [state.tab === 'extras' ? 'extras' : '', state.platform === 'all' ? '' : state.platform].filter(Boolean);
+      try { history.replaceState(null, '', parts.length ? '#' + parts.join('-') : location.pathname); } catch (_) {}
+    };
+    segs.forEach((b) => b.addEventListener('click', () => { setPlatform(b.dataset.platform); syncHash(); }));
+    tabs.forEach((b) => b.addEventListener('click', () => { setTab(b.dataset.tab); syncHash(); }));
     let t;
     q.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => { state.q = q.value; state.limit = D.initial; apply(); }, 120); });
     sort.addEventListener('change', () => { state.sort = sort.value; state.limit = D.initial; apply(); });
     more.addEventListener('click', () => { state.limit += D.size; apply(); });
-    const h = location.hash.slice(1);
-    if ([...segs].some((b) => b.dataset.platform === h)) setPlatform(h); else apply();
+    const h = location.hash.slice(1).split('-');
+    if (h.includes('extras') && tabs.length > 1) { state.tab = 'extras'; tabs.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.tab === 'extras'))); }
+    const hp = h.find((x) => [...segs].some((b) => b.dataset.platform === x));
+    if (hp) setPlatform(hp); else apply();
   }
 
   // ---------- Review sheet ----------

@@ -138,12 +138,18 @@ const reviews = groups.map((g) => {
     hidden: !!ov.hidden,
     // noindex: stays on the home page, but its own page is kept out of Google (non-review posts).
     noindex: !!ov.noindex,
+    // tab: which home-page tab the card sits on. Non-review posts (noindex) default to Extras;
+    // overrides.json reviews[slug].tab ("reviews" | "extras") moves anything by hand.
+    tab: ov.tab === 'reviews' || ov.tab === 'extras' ? ov.tab : (ov.noindex ? 'extras' : 'reviews'),
   };
 }).filter((r) => !r.hidden).sort((a, b) => b.published.localeCompare(a.published));
 
+const reviewTab = reviews.filter((r) => r.tab === 'reviews');
+const extrasTab = reviews.filter((r) => r.tab === 'extras');
 const totals = {
-  reviews: reviews.length,
-  reviewsWeek: reviews.filter((r) => (NOW - new Date(r.published)) / 86400000 <= 7).length,
+  reviews: reviewTab.length,
+  extras: extrasTab.length,
+  reviewsWeek: reviewTab.filter((r) => (NOW - new Date(r.published)) / 86400000 <= 7).length,
   views: sum(reviews.map((r) => r.views)), likes: sum(reviews.map((r) => r.likes)), comments: sum(reviews.map((r) => r.comments)),
   hasWeek: reviews.some((r) => r.week != null),
   viewsWeek: sum(reviews.map((r) => r.week)), likesWeek: sum(reviews.map((r) => r.weekLikes)), commentsWeek: sum(reviews.map((r) => r.weekComments)),
@@ -247,7 +253,7 @@ function card(r, i) {
     : r.wide
       ? `<img class="bg" src="${esc(r.thumb)}" alt="" aria-hidden="true" ${load} decoding="async"><img class="fit" src="${esc(r.thumb)}" alt="" width="640" height="360" ${load} decoding="async">`
       : `<img src="${esc(r.thumb)}" alt="" width="360" height="640" ${load} decoding="async"${r.thumbFallback ? ` data-fallback="${esc(r.thumbFallback)}"` : ''}>`;
-  return `<article class="rr-card" data-slug="${r.slug}" data-platforms="${r.platforms.map((x) => x.platform).join(' ')}" data-date="${Date.parse(r.published)}" data-views="${r.views}" data-likes="${r.likes ?? 0}" data-week="${r.week ?? 0}" data-q="${esc(q)}">
+  return `<article class="rr-card" data-slug="${r.slug}" data-tab="${r.tab}" data-platforms="${r.platforms.map((x) => x.platform).join(' ')}" data-date="${Date.parse(r.published)}" data-views="${r.views}" data-likes="${r.likes ?? 0}" data-week="${r.week ?? 0}" data-q="${esc(q)}">
   <a class="rr-thumb${r.wide && r.thumb ? ' rr-thumb--wide' : ''}" href="/reviews/${r.slug}/" data-open="${r.slug}" aria-label="${esc(r.title)}">${img}${r.isNew ? '<span class="rr-thumb__new">New</span>' : ''}${r.durationSec ? `<span class="rr-thumb__dur">${clock(r.durationSec)}</span>` : ''}<span class="rr-thumb__views">${icon.play}${compact(r.views)}<span class="sr-only"> views</span></span></a>
   <h3 class="rr-card__title"><a href="/reviews/${r.slug}/" data-open="${r.slug}">${esc(r.title)}</a></h3>
   <div class="rr-card__meta">${r.platforms.map((x) => `<span class="rr-chip rr-chip--bare rr-chip--${x.platform}" title="${pname(x.platform)}">${pshort(x.platform)}</span>`).join('')}<time datetime="${r.published}">${fmtDate(r.published)}</time></div>
@@ -271,7 +277,7 @@ function homeBody({ embeds }) {
   const wk = (n, label = 'this week') => (totals.hasWeek && n ? `+${n < 10000 ? full(n) : compact(n)} ${label}` : '');
   const grid = reviews.length
     ? `<div class="grid" id="grid">\n${reviews.map(card).join('\n')}\n</div>
-<p class="empty" id="no-results" hidden><strong>No reviews match that.</strong>Try a different word or platform.</p>
+<p class="empty" id="no-results" hidden><strong>Nothing matches that.</strong>Try a different word, platform or tab.</p>
 <div class="more"><button class="rr-btn rr-btn--secondary" type="button" id="more" hidden>Show more</button></div>`
     : `<p class="empty"><strong>The first reviews are on their way.</strong>Follow along on ${enabledPlatforms.map(pname).join(' and ')} in the meantime.</p>`;
   return `${header(true)}
@@ -297,8 +303,12 @@ ${pitchPlayer()}
 
 <section class="reviews" id="reviews" aria-labelledby="reviews-title">
   <div class="toolbar"><div class="wrap">
-    <h2 id="reviews-title">All reviews <small>${totals.reviews}</small></h2>
-    <label class="rr-field search" for="q">${icon.search}<span class="sr-only">Search reviews</span><input id="q" type="search" placeholder="Search ${totals.reviews} reviews" autocomplete="off"></label>
+    <h2 id="reviews-title" class="sr-only">Videos</h2>
+    <div class="tabs" role="group" aria-label="Show">
+      <button type="button" data-tab="reviews" aria-pressed="true">Reviews <small>${totals.reviews}</small></button>
+      ${totals.extras ? `<button type="button" data-tab="extras" aria-pressed="false">Extras <small>${totals.extras}</small></button>` : ''}
+    </div>
+    <label class="rr-field search" for="q">${icon.search}<span class="sr-only">Search videos</span><input id="q" type="search" placeholder="Search" autocomplete="off"></label>
     <div class="controls">
       <div class="rr-seg" role="group" aria-label="Platform">
         <button type="button" data-platform="all" aria-pressed="true">All</button>
