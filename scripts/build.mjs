@@ -389,7 +389,7 @@ function reviewPage(r) {
       <span class="rr-label">Review · <time datetime="${r.published}">${fullDate(r.published)}</time></span>
       <h1>${esc(r.title)}</h1>
       ${statsTable(r)}
-      ${r.productUrl ? `<div style="display:flex;flex-direction:column;gap:8px;max-width:360px"><a class="rr-btn rr-btn--primary" href="${esc(r.productUrl)}" rel="sponsored nofollow noopener" target="_blank">Check price on Amazon${icon.out}</a><p class="rr-disclosure" style="margin:0">Affiliate link. I may earn a commission.</p></div>` : ''}
+      ${r.productUrl ? `<div style="display:flex;flex-direction:column;gap:8px;max-width:360px"><a class="rr-btn rr-btn--primary" href="${esc(r.productUrl)}" rel="sponsored nofollow noopener" target="_blank">See on Amazon${icon.out}</a><p class="rr-disclosure" style="margin:0">Affiliate link. I may earn a commission.</p></div>` : ''}
       ${desc ? `<p class="sheet__desc" style="max-height:none">${esc(desc)}</p>` : ''}
       <div class="row">${r.platforms.map((x) => `<a class="rr-btn rr-btn--secondary rr-btn--sm" href="${esc(x.url)}" target="_blank" rel="noopener">Watch on ${pname(x.platform)}</a>`).join('')}</div>
     </article>

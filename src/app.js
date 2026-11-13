@@ -151,11 +151,11 @@
       r.platforms.map(row).join('') + '</tbody>' +
       (multi ? '<tfoot><tr><td>Total</td><td>' + full(r.views) + '</td><td>' + full(r.likes) + '</td><td>' + full(r.comments) + '</td><td class="up">' + (r.week ? '+' + compact(r.week) : '—') + '</td></tr></tfoot>' : '') +
       '</table></div>' +
-      (r.productUrl ? '<div style="display:flex;flex-direction:column;gap:8px"><a class="rr-btn rr-btn--primary" href="' + esc(r.productUrl) + '" rel="sponsored nofollow noopener" target="_blank">Check price on Amazon' + ICON.out + '</a><p class="rr-disclosure" style="margin:0;text-align:center">Affiliate link. I may earn a commission.</p></div>' : '') +
       (r.description ? '<p class="sheet__desc">' + esc(r.description) + '</p>' : '') +
-      '<div class="row">' + r.platforms.map((x) => '<a class="rr-btn rr-btn--secondary rr-btn--sm" href="' + esc(x.url) + '" target="_blank" rel="noopener">Watch on ' + esc(x.name) + '</a>').join('') +
-      '<button class="rr-btn rr-btn--ghost rr-btn--sm" type="button" data-copy>Copy link</button></div>' +
-      '<p class="rr-disclosure" data-copy-msg hidden style="margin:0"></p>';
+      '<div class="row">' +
+      (r.productUrl ? '<a class="rr-btn rr-btn--primary rr-btn--sm" href="' + esc(r.productUrl) + '" rel="sponsored nofollow noopener" target="_blank">See on Amazon' + ICON.out + '</a>' : '') +
+      r.platforms.map((x) => '<a class="rr-btn rr-btn--secondary rr-btn--sm" href="' + esc(x.url) + '" target="_blank" rel="noopener">Watch on ' + esc(x.name) + '</a>').join('') + '</div>' +
+      (r.productUrl ? '<p class="rr-disclosure" style="margin:0">Affiliate link: as an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</p>' : '');
     wirePlayer(inner.querySelector('.player'));
   }
 
