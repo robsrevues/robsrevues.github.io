@@ -56,8 +56,10 @@ export async function fetchYouTube({ apiKey, handle }) {
         description: v.snippet.description || '',
         publishedAt: v.snippet.publishedAt,
         durationSec,
-        // Shorts get a true vertical thumbnail; landscape videos use the 16:9 one with no letterbox bars.
-        thumbVertical: short ? `https://i.ytimg.com/vi/${v.id}/oardefault.jpg` : null,
+        // Shorts: YouTube's portrait image (oardefault) is the auto-picked frame and ignores a custom thumbnail,
+        // while the standard 16:9 thumbnail carries the custom one, centered between blurred bars. The site
+        // shows it in a 9:16 box with object-fit: cover, which crops to exactly that center.
+        thumbVertical: short ? ((t.maxres && t.maxres.url) || (t.standard && t.standard.url) || `https://i.ytimg.com/vi/${v.id}/hq720.jpg`) : null,
         thumbWide: (t.maxres && t.maxres.url) || `https://i.ytimg.com/vi/${v.id}/mqdefault.jpg`,
         thumb: best.url || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
         vertical: short,
