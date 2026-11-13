@@ -1,5 +1,5 @@
 {
-  "_help": "Optional fixes the APIs can't know. 'posts' keys are platform:videoId; 'review' groups posts into one review (its value becomes the page address /reviews/<value>/). 'reviews' keys are those addresses; noindex keeps a non-review post on the home page but out of Google. See README > Editing reviews. 'redirects' sends an old review address to its new one: { \"old-slug\": \"new-slug\" }.",
+  "_help": "Optional fixes the APIs can't know. 'posts' keys are platform:videoId; 'review' groups posts into one review (its value becomes the page address /reviews/<value>/). 'reviews' keys are those addresses; noindex keeps a non-review post on the home page but out of Google. See README > Editing reviews. 'redirects' sends an old review address to its new one: { \"old-slug\": \"new-slug\" }. Shorts and full-length YouTube reviews that share an Amazon link merge into one card automatically; old Short addresses redirect on their own.",
   "posts": {
     "youtube:AlaLZjk5Abk": {
       "hidden": true
@@ -84,6 +84,12 @@
     },
     "tiktok:7707104077964004622": {
       "review": "unbox-incoming-teaser"
+    },
+    "youtube:0ZwFeg0qlUU": {
+      "review": "plug-in-white-noise-machine-unboxing-calm-me-part-1"
+    },
+    "youtube:49hdXoBtkCw": {
+      "review": "plug-in-white-noise-machine-unboxing-calm-me-part-1"
     }
   },
   "reviews": {
@@ -137,6 +143,7 @@
     }
   },
   "redirects": {
-    "dry-nose-cracked-lips-this-58-hour-humidifier-first-impressi": "homedics-humidifier-first-impressions"
+    "dry-nose-cracked-lips-this-58-hour-humidifier-first-impressi": "homedics-humidifier-first-impressions",
+    "this-sound-machine-plugs-right-into-the-wall": "plug-in-white-noise-machine-unboxing-calm-me-part-1"
   }
 }

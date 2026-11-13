@@ -115,10 +115,36 @@ for (const post of posts) {
   g.posts.push(post);
 }
 
+// One card per product: a YouTube Short (or TikTok) and the full-length YouTube review of the same product
+// become one review when they share an Amazon link and were posted within 10 days of each other.
+// The Short leads the card; the full review is one tap away in the review sheet.
+const isShortPost = (x) => x.platform !== 'youtube' || !!x.thumbVertical;
+const isLongYt = (x) => x.platform === 'youtube' && !x.thumbVertical;
+const groupLinks = (g) => new Set(g.posts.map((x) => productLink(x.description)).filter(Boolean));
+const standaloneSlug = (g) => g.id || slugify(cleanTitle(g.posts[0].title) || 'untitled');
+const autoRedirects = {};
+for (const L of groups.filter((g) => g.posts.some(isLongYt) && !g.posts.some((x) => x.platform === 'youtube' && x.thumbVertical))) {
+  if (L.absorbed) continue;
+  const lLinks = groupLinks(L);
+  if (!lLinks.size) continue;
+  const lDate = L.posts.find(isLongYt).publishedAt.slice(0, 10);
+  const S = groups.find((g) => g !== L && !g.absorbed && !g.forced && !g.posts.some(isLongYt) &&
+    g.posts.some((x) => x.platform === 'youtube' && x.thumbVertical) &&
+    [...groupLinks(g)].some((u) => lLinks.has(u)) &&
+    Math.abs(daysBetween(lDate, g.posts[0].publishedAt.slice(0, 10))) <= 10);
+  if (!S) continue;
+  autoRedirects[standaloneSlug(S)] = L;
+  L.posts.push(...S.posts); S.absorbed = true;
+}
+for (let i = groups.length - 1; i >= 0; i--) if (groups[i].absorbed) groups.splice(i, 1);
+
 const usedSlugs = new Set();
 const reviews = groups.map((g) => {
-  g.posts.sort((a, b) => PLATFORM_ORDER.indexOf(a.platform) - PLATFORM_ORDER.indexOf(b.platform));
-  const primary = g.posts[0];
+  // Platform order, then Shorts before full-length videos so the vertical Short leads the card.
+  g.posts.sort((a, b) => (PLATFORM_ORDER.indexOf(a.platform) - PLATFORM_ORDER.indexOf(b.platform)) || (isLongYt(a) - isLongYt(b)));
+  const hasPair = g.posts.some(isLongYt) && g.posts.some((x) => x.platform === 'youtube' && x.thumbVertical);
+  // Titles come from the full review when there is one: they name the product, which is better for search.
+  const primary = (hasPair && g.posts.find(isLongYt)) || g.posts[0];
   const ovById = (g.id && overrides.reviews?.[g.id]) || {};
   const title = ovById.title || cleanTitle(primary.title) || cleanTitle(g.posts.find((x) => cleanTitle(x.title))?.title) || ovById.product || 'Untitled review';
   let slug = g.id || slugify(ovById.product || title);
@@ -130,7 +156,7 @@ const reviews = groups.map((g) => {
   const productUrl = ov.productUrl || g.posts.map((x) => productLink(x.description)).find(Boolean) || null;
   const published = g.posts.map((x) => x.publishedAt).sort()[0];
   const platforms = g.posts.map((x) => ({
-    platform: x.platform, url: x.url, embedUrl: x.embedUrl, vertical: x.vertical !== false,
+    platform: x.platform, kind: hasPair && x.platform === 'youtube' ? (isLongYt(x) ? 'full' : 'short') : null, url: x.url, embedUrl: x.embedUrl, vertical: x.vertical !== false,
     views: x.stats.views ?? 0, likes: x.stats.likes, comments: x.stats.comments, shares: x.stats.shares,
     week: weekGain(x.key, x, 1), weekLikes: weekGain(x.key, x, 2), weekComments: weekGain(x.key, x, 3),
     publishedAt: x.publishedAt, durationSec: x.durationSec, title: x.title, thumb: x.thumb, thumbVertical: x.thumbVertical,
@@ -138,13 +164,16 @@ const reviews = groups.map((g) => {
   const weekVals = platforms.map((x) => x.week).filter((x) => x != null);
   const tt = g.posts.find((x) => x.platform === 'tiktok' && x.thumb);
   const yt = g.posts.find((x) => x.platform === 'youtube');
-  const thumb = ov.thumb || tt?.thumb || yt?.thumbVertical || yt?.thumbWide || g.posts.find((x) => x.thumb)?.thumb || null;
+  const full = hasPair ? g.posts.find(isLongYt) : null;
+  // Combined Short + full review: the Short's own vertical thumbnail leads (TikTok covers can be letterboxed).
+  const thumb = ov.thumb || (hasPair && yt?.thumbVertical) || tt?.thumb || yt?.thumbVertical || yt?.thumbWide || g.posts.find((x) => x.thumb)?.thumb || null;
   const thumbFallback = yt?.thumbVertical && thumb === yt.thumbVertical ? (yt.thumbWide || yt.thumb) : null;
   const wide = !!yt && !ov.thumb && !tt?.thumb && !yt.thumbVertical;
   return {
     slug, title, description, productUrl, product: ov.product || null, published,
     isNew: (NOW - new Date(published)) / 3600000 <= 48,
     durationSec: g.posts.find((x) => x.durationSec)?.durationSec || null,
+    fullDurationSec: full?.durationSec || null,
     thumb, thumbFallback, wide, tint: tintFor(slug), art: ov.product || title.split(/[:?.!]/)[0],
     platforms,
     views: sum(platforms.map((x) => x.views)),
@@ -161,6 +190,11 @@ const reviews = groups.map((g) => {
     tab: ov.tab === 'reviews' || ov.tab === 'extras' ? ov.tab : (ov.noindex ? 'extras' : 'reviews'),
   };
 }).filter((r) => !r.hidden).sort((a, b) => b.published.localeCompare(a.published));
+// Addresses of Shorts that now live inside a combined review keep working (see the redirect pages below).
+for (const [from, g] of Object.entries(autoRedirects)) {
+  const r = reviews.find((x) => x.platforms.some((p) => g.posts.some((q) => q.url === p.url)));
+  if (r && from !== r.slug && !reviews.some((x) => x.slug === from)) (overrides.redirects ||= {})[from] ??= r.slug;
+}
 
 const reviewTab = reviews.filter((r) => r.tab === 'reviews');
 const extrasTab = reviews.filter((r) => r.tab === 'extras');
@@ -272,9 +306,9 @@ function card(r, i) {
       ? `<img class="bg" src="${esc(r.thumb)}" alt="" aria-hidden="true" ${load} decoding="async"><img class="fit" src="${esc(r.thumb)}" alt="" width="640" height="360" ${load} decoding="async">`
       : `<img src="${esc(r.thumb)}" alt="" width="360" height="640" ${load} decoding="async"${r.thumbFallback ? ` data-fallback="${esc(r.thumbFallback)}"` : ''}>`;
   return `<article class="rr-card" data-slug="${r.slug}" data-tab="${r.tab}" data-platforms="${r.platforms.map((x) => x.platform).join(' ')}" data-date="${Date.parse(r.published)}" data-views="${r.views}" data-likes="${r.likes ?? 0}" data-week="${r.week ?? 0}" data-q="${esc(q)}">
-  <a class="rr-thumb${r.wide && r.thumb ? ' rr-thumb--wide' : ''}" href="/reviews/${r.slug}/" data-open="${r.slug}" aria-label="${esc(r.title)}">${img}${r.isNew ? '<span class="rr-thumb__new">New</span>' : ''}${r.durationSec ? `<span class="rr-thumb__dur">${clock(r.durationSec)}</span>` : ''}<span class="rr-thumb__views">${icon.play}${compact(r.views)}<span class="sr-only"> views</span></span></a>
+  <a class="rr-thumb${r.wide && r.thumb ? ' rr-thumb--wide' : ''}" href="/reviews/${r.slug}/" data-open="${r.slug}" aria-label="${esc(r.title)}">${img}${r.isNew ? '<span class="rr-thumb__new">New</span>' : ''}${r.durationSec ? `<span class="rr-thumb__dur">${clock(r.durationSec)}</span>` : ''}${r.fullDurationSec ? `<span class="rr-thumb__full">＋ Full review ${clock(r.fullDurationSec)}</span>` : ''}<span class="rr-thumb__views">${icon.play}${compact(r.views)}<span class="sr-only"> views</span></span></a>
   <h3 class="rr-card__title"><a href="/reviews/${r.slug}/" data-open="${r.slug}">${esc(r.title)}</a></h3>
-  <div class="rr-card__meta">${r.platforms.map((x) => `<span class="rr-chip rr-chip--bare rr-chip--${x.platform}" title="${pname(x.platform)}">${pshort(x.platform)}</span>`).join('')}<time datetime="${r.published}">${fmtDate(r.published)}</time></div>
+  <div class="rr-card__meta">${r.platforms.filter((x, i, a) => a.findIndex((y) => y.platform === x.platform) === i).map((x) => `<span class="rr-chip rr-chip--bare rr-chip--${x.platform}" title="${pname(x.platform)}">${pshort(x.platform)}</span>`).join('')}<time datetime="${r.published}">${fmtDate(r.published)}</time></div>
   <div class="rr-card__stats">${r.likes != null ? `<span>${icon.heart}${statNum(r.likes)}<span class="sr-only"> likes</span></span>` : ''}${r.comments != null ? `<span>${icon.comment}${statNum(r.comments)}<span class="sr-only"> comments</span></span>` : ''}${r.week ? `<span class="rr-delta">+${compact(r.week)} wk</span>` : ''}</div>${r.productUrl ? `
   <div class="rr-card__cta"><a class="rr-card__buy" href="${esc(r.productUrl)}" rel="sponsored nofollow noopener" target="_blank">${icon.cart}See on Amazon<span class="sr-only">: ${esc(r.title)} (affiliate link, opens Amazon)</span></a></div>` : ''}
 </article>`;
@@ -288,7 +322,7 @@ const sheetData = reviews.map((r) => ({
   slug: r.slug, title: r.title, date: fullDate(r.published), productUrl: r.productUrl,
   description: cleanDesc(r.description).slice(0, 700),
   thumb: r.thumb, thumbFallback: r.thumbFallback, wide: r.wide,
-  platforms: r.platforms.map((x) => ({ platform: x.platform, name: pname(x.platform), url: x.url, embedUrl: x.embedUrl, vertical: x.vertical, views: x.views, likes: x.likes, comments: x.comments, week: x.week })),
+  platforms: r.platforms.map((x) => ({ platform: x.platform, name: x.kind === 'short' ? `${pname(x.platform)} Short` : x.kind === 'full' ? 'Full review' : pname(x.platform), url: x.url, embedUrl: x.embedUrl, vertical: x.vertical, views: x.views, likes: x.likes, comments: x.comments, week: x.week })),
   views: r.views, likes: r.likes, comments: r.comments, week: r.week,
 }));
 
