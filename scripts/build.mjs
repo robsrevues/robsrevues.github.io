@@ -275,7 +275,8 @@ function card(r, i) {
   <a class="rr-thumb${r.wide && r.thumb ? ' rr-thumb--wide' : ''}" href="/reviews/${r.slug}/" data-open="${r.slug}" aria-label="${esc(r.title)}">${img}${r.isNew ? '<span class="rr-thumb__new">New</span>' : ''}${r.durationSec ? `<span class="rr-thumb__dur">${clock(r.durationSec)}</span>` : ''}<span class="rr-thumb__views">${icon.play}${compact(r.views)}<span class="sr-only"> views</span></span></a>
   <h3 class="rr-card__title"><a href="/reviews/${r.slug}/" data-open="${r.slug}">${esc(r.title)}</a></h3>
   <div class="rr-card__meta">${r.platforms.map((x) => `<span class="rr-chip rr-chip--bare rr-chip--${x.platform}" title="${pname(x.platform)}">${pshort(x.platform)}</span>`).join('')}<time datetime="${r.published}">${fmtDate(r.published)}</time></div>
-  <div class="rr-card__stats">${r.likes != null ? `<span>${icon.heart}${statNum(r.likes)}<span class="sr-only"> likes</span></span>` : ''}${r.comments != null ? `<span>${icon.comment}${statNum(r.comments)}<span class="sr-only"> comments</span></span>` : ''}${r.week ? `<span class="rr-delta">+${compact(r.week)} wk</span>` : ''}${r.productUrl ? `<a class="rr-card__buy" href="${esc(r.productUrl)}" rel="sponsored nofollow noopener" target="_blank">${icon.cart}See on Amazon<span class="sr-only">: ${esc(r.title)} (affiliate link, opens Amazon)</span></a>` : ''}</div>
+  <div class="rr-card__stats">${r.likes != null ? `<span>${icon.heart}${statNum(r.likes)}<span class="sr-only"> likes</span></span>` : ''}${r.comments != null ? `<span>${icon.comment}${statNum(r.comments)}<span class="sr-only"> comments</span></span>` : ''}${r.week ? `<span class="rr-delta">+${compact(r.week)} wk</span>` : ''}</div>${r.productUrl ? `
+  <div class="rr-card__cta"><a class="rr-card__buy" href="${esc(r.productUrl)}" rel="sponsored nofollow noopener" target="_blank">${icon.cart}See on Amazon<span class="sr-only">: ${esc(r.title)} (affiliate link, opens Amazon)</span></a></div>` : ''}
 </article>`;
 }
 
