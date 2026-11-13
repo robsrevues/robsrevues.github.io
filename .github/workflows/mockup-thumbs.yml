@@ -1,0 +1,29 @@
+name: Mockup thumbs (temporary)
+on:
+  push:
+    branches: [mockup-thumbs]
+jobs:
+  thumbs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p out
+          python3 - <<'PY'
+          import json,urllib.request,os
+          d=json.load(open('data/posts.json')); posts=d['posts'] if isinstance(d,dict) else d
+          for p in posts:
+              if p['platform']!='youtube': continue
+              for k in ('thumbVertical','thumbWide','thumb'):
+                  u=p.get(k)
+                  if u and u.startswith('http'):
+                      try:
+                          urllib.request.urlretrieve(u, f"out/{p['id']}-{k}.jpg")
+                      except Exception as e: print(u,e)
+          PY
+          ls out | wc -l
+      - uses: actions/upload-artifact@v4
+        with:
+          name: thumbs
+          path: out
+          retention-days: 1
