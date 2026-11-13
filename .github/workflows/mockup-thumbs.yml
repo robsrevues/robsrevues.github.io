@@ -2,6 +2,8 @@ name: Mockup thumbs (temporary)
 on:
   push:
     branches: [mockup-thumbs]
+permissions:
+  contents: write
 jobs:
   thumbs:
     runs-on: ubuntu-latest
@@ -22,8 +24,8 @@ jobs:
                       except Exception as e: print(u,e)
           PY
           ls out | wc -l
-      - uses: actions/upload-artifact@v4
-        with:
-          name: thumbs
-          path: out
-          retention-days: 1
+      - run: |
+          [ "$(git log -1 --pretty=%s)" = "mockup thumbs" ] && exit 0
+          mkdir -p mockup && mv out mockup/yt
+          git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add mockup && git commit -qm "mockup thumbs" && git push
