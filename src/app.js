@@ -225,3 +225,66 @@
     label();
   });
 })();
+// Hover preview: on desktop, resting on a card for a moment plays a few silent seconds of the YouTube video
+// in place. Skipped on touch screens, with reduced motion or data saver, and for TikTok-only cards
+// (TikTok throttles its embedded player).
+(function () {
+  const ok = window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+    !(navigator.connection && navigator.connection.saveData);
+  const dataEl = document.getElementById('rr-data');
+  if (!ok || !dataEl) return;
+  const bySlug = {};
+  JSON.parse(dataEl.textContent).reviews.forEach((r) => { bySlug[r.slug] = r; });
+  const ytId = (u) => { const m = /[?&]v=([\w-]{11})|youtu\.be\/([\w-]{11})|shorts\/([\w-]{11})/.exec(u || ''); return m && (m[1] || m[2] || m[3]); };
+  let cur = null, timer = 0, seq = 0;
+  const stop = () => {
+    clearTimeout(timer);
+    if (!cur) return;
+    const f = cur.frame; f.classList.remove('on');
+    setTimeout(() => f.remove(), 250);
+    clearTimeout(cur.end); cur = null;
+  };
+  const start = (thumb) => {
+    const card = thumb.closest('.rr-card'); const r = card && bySlug[card.dataset.slug];
+    if (!r) return;
+    const wide = thumb.classList.contains('rr-thumb--wide');
+    const yts = r.platforms.filter((p) => p.platform === 'youtube');
+    const pick = (wide ? yts.find((p) => !p.vertical) : yts.find((p) => p.vertical)) || yts[0];
+    const id = pick && ytId(pick.url);
+    if (!id) return;
+    const n = ++seq;
+    const f = document.createElement('iframe');
+    f.className = 'rr-preview' + (wide && !pick.vertical ? ' rr-preview--wide' : '');
+    f.title = 'Preview'; f.tabIndex = -1; f.setAttribute('aria-hidden', 'true');
+    f.allow = 'autoplay; encrypted-media';
+    f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&mute=1&controls=0&playsinline=1&loop=1&playlist=' + id +
+      '&rel=0&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&enablejsapi=1&origin=' + encodeURIComponent(location.origin);
+    f.addEventListener('load', () => {
+      try { f.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: n, channel: 'widget' }), '*'); } catch (_) {}
+    });
+    thumb.appendChild(f);
+    cur = { frame: f, n, end: 0 };
+  };
+  window.addEventListener('message', (e) => {
+    if (!cur || !/youtube(-nocookie)?\.com$/.test(new URL(e.origin).hostname)) return;
+    let d; try { d = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (_) { return; }
+    if (!d || d.id !== cur.n) return;
+    const st = d.info && d.info.playerState;
+    if (st === 1 && !cur.frame.classList.contains('on')) {
+      cur.frame.classList.add('on');
+      const mine = cur; mine.end = setTimeout(() => { if (cur === mine) stop(); }, 6000);
+    }
+  });
+  document.addEventListener('mouseover', (e) => {
+    const t = e.target.closest && e.target.closest('#grid .rr-thumb');
+    if (!t || (cur && cur.frame.parentNode === t)) return;
+    stop();
+    timer = setTimeout(() => start(t), 450);
+  });
+  document.addEventListener('mouseout', (e) => {
+    const t = e.target.closest && e.target.closest('#grid .rr-thumb');
+    if (t && !t.contains(e.relatedTarget)) stop();
+  });
+  document.addEventListener('click', stop, true);
+})();

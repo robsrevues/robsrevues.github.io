@@ -266,3 +266,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 @media (max-width: 719px) { .site-header .work-btn { display: inline-flex; } }
 @media (max-width: 559px) { .site-header .nav-reviews, .site-header .nav-about { display: none; } .site-header nav { flex-wrap: nowrap; } }
 @media (max-width: 359px) { .site-header .rr-wordmark { display: none; } }
+.rr-preview { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 1; opacity: 0; transition: opacity 250ms ease-out; pointer-events: none; background: #000; }
+.rr-preview.on { opacity: 1; }
+.rr-preview--wide { inset: auto 0; top: 50%; height: auto; aspect-ratio: 16 / 9; transform: translateY(-50%); }
+.rr-thumb__new, .rr-thumb__dur, .rr-thumb__full, .rr-thumb__views { z-index: 2; }
