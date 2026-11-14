@@ -250,3 +250,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .prose h2 { font: 750 20px/26px var(--font-display); font-stretch: 110%; margin: 32px 0 8px; }
 .prose p, .prose li { font-size: 16px; line-height: 26px; }
 .prose a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+.about__brands { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+.about__brands p { margin: 0; max-width: 60ch; }

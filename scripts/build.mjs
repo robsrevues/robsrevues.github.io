@@ -382,6 +382,10 @@ ${grid}
   <div class="about__body">
     <p>${esc(cfg.about)}</p>
     <div class="row">${enabledPlatforms.map((k) => `<a class="rr-btn rr-btn--secondary" href="${esc(cfg.platforms[k].url)}" rel="me noopener" target="_blank">Follow on ${pname(k)}</a>`).join('')}</div>
+    ${cfg.contactEmail && cfg.aboutBrands ? `<div class="about__brands">
+      <p><strong>Brands:</strong> ${esc(cfg.aboutBrands)}</p>
+      <div class="hero__cta"><a class="rr-btn rr-btn--primary" href="${esc(mail)}">Work with me</a><a class="hero__email" href="${esc(mail)}">${esc(cfg.contactEmail)}</a></div>
+    </div>` : ''}
   </div>
 </div></section>
 </main>
