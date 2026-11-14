@@ -154,8 +154,9 @@
       (r.description ? '<p class="sheet__desc">' + esc(r.description) + '</p>' : '') +
       '<div class="row">' +
       (r.productUrl ? '<a class="rr-btn rr-btn--primary rr-btn--sm" href="' + esc(r.productUrl) + '" rel="sponsored nofollow noopener" target="_blank">See on Amazon' + ICON.out + '</a>' : '') +
-      r.platforms.map((x) => '<a class="rr-btn rr-btn--secondary rr-btn--sm" href="' + esc(x.url) + '" target="_blank" rel="noopener">Watch on ' + esc(x.name) + '</a>').join('') + '</div>' +
-      (r.productUrl ? '<p class="rr-disclosure" style="margin:0">Affiliate link: as an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</p>' : '');
+      r.platforms.map((x) => '<a class="rr-btn rr-btn--secondary rr-btn--sm" href="' + esc(x.url) + '" target="_blank" rel="noopener">' + (x.name === 'Full review' ? 'Watch full review' : 'Watch on ' + esc(x.name)) + '</a>').join('') + '</div>' +
+      (r.productUrl ? '<p class="rr-disclosure" style="margin:0">Affiliate link: as an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</p>' : '') +
+      (r.pitch ? '<p class="video-pitch"><strong>Brands &amp; businesses:</strong> want a video like this for your product? <a href="' + esc(r.pitch) + '">Work with me</a></p>' : '');
     wirePlayer(inner.querySelector('.player'));
   }
 
@@ -206,4 +207,21 @@
     window.addEventListener('popstate', () => { pushed = false; if (sheet.open) close(true); else if (location.hash.startsWith('#r-')) open(location.hash.slice(3), false); });
     if (location.hash.startsWith('#r-')) open(location.hash.slice(3), false);
   }
+})();
+
+// Light/dark switch: follows the device until the visitor picks one, then remembers it (when storage allows).
+(function () {
+  const btn = document.querySelector('.theme-btn');
+  if (!btn) return;
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+  const current = () => document.documentElement.dataset.theme || (mq.matches ? 'dark' : 'light');
+  const label = () => btn.setAttribute('aria-label', current() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  label();
+  mq.addEventListener?.('change', label);
+  btn.addEventListener('click', () => {
+    const next = current() === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('rr-theme', next); } catch (_) {}
+    label();
+  });
 })();

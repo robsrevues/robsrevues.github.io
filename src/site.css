@@ -251,5 +251,18 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .prose p, .prose li { font-size: 16px; line-height: 26px; }
 .prose a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
 
-.about__brands { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
-.about__brands p { margin: 0; max-width: 60ch; }
+.brands + .about { margin-top: 0; border-top-color: var(--line); }
+.brands__list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 22px; }
+.brands__list li { position: relative; padding-left: 20px; }
+.brands__list li::before { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 2px; background: var(--ink); }
+.theme-btn { width: 36px; padding: 0; justify-content: center; }
+.theme-btn svg { width: 18px; height: 18px; }
+.theme-btn .i-moon { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .theme-btn .i-sun { display: none; } :root:not([data-theme="light"]) .theme-btn .i-moon { display: block; } }
+:root[data-theme="dark"] .theme-btn .i-sun { display: none; }
+:root[data-theme="dark"] .theme-btn .i-moon { display: block; }
+.video-pitch { margin: 4px 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: 15px; line-height: 22px; color: var(--ink); }
+.video-pitch a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 719px) { .site-header .work-btn { display: inline-flex; } }
+@media (max-width: 559px) { .site-header .nav-reviews, .site-header .nav-about { display: none; } .site-header nav { flex-wrap: nowrap; } }
+@media (max-width: 359px) { .site-header .rr-wordmark { display: none; } }

@@ -214,6 +214,7 @@ const enabledPlatforms = PLATFORM_ORDER.filter((k) => cfg.platforms[k].enabled);
 const follower = (k) => { const c = channels[k]; return c?.followers != null ? `${compact(c.followers)} ${c.followerLabel || 'followers'}` : cfg.platforms[k].handle; };
 
 const P = cfg.pitch || null;
+const videoMail = (title) => cfg.contactEmail ? `mailto:${cfg.contactEmail}?subject=${encodeURIComponent(`A video like "${title}"`)}` : '';
 const mail = cfg.contactEmail ? `mailto:${cfg.contactEmail}?subject=${encodeURIComponent(`Working with ${cfg.name}`)}` : '';
 function pitchCta() {
   if (!cfg.contactEmail) return '';
@@ -238,9 +239,10 @@ function header(home) {
   return `<header class="site-header"><div class="wrap">
   <a class="brand" href="/" aria-label="${esc(cfg.name)} home"><img class="brand__photo" src="/rob.jpg" alt="" width="48" height="48"><span class="rr-wordmark">Rob's <span class="rr-mark">Revues</span></span></a>
   <nav aria-label="Site">
-    <a class="rr-btn rr-btn--ghost rr-btn--sm" href="${h}#reviews">Reviews</a>
-    <a class="rr-btn rr-btn--ghost rr-btn--sm" href="${h}#about">About</a>
+    <a class="rr-btn rr-btn--ghost rr-btn--sm nav-reviews" href="${h}#reviews">Reviews</a>
+    <a class="rr-btn rr-btn--ghost rr-btn--sm nav-about" href="${h}#about">About</a>
     ${cfg.contactEmail ? `<a class="rr-btn rr-btn--ghost rr-btn--sm work-btn" href="${h}#work-with-me">Work with me</a>` : ''}
+    <button class="rr-btn rr-btn--ghost rr-btn--sm theme-btn" type="button" aria-label="Switch to light mode" title="Switch theme"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg></button>
     ${enabledPlatforms.map((k) => `<a class="rr-btn rr-btn--secondary rr-btn--sm platform-btn" href="${esc(cfg.platforms[k].url)}" rel="me noopener" target="_blank"><span class="rr-dot rr-dot--${k}"></span>${pname(k)}</a>`).join('\n    ')}
   </nav>
 </div></header>`;
@@ -270,6 +272,7 @@ function doc({ title, description, path, ld, body, ogImage, ogType = 'website', 
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>try{var t=localStorage.getItem("rr-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${url}">
@@ -322,6 +325,7 @@ const sheetData = reviews.map((r) => ({
   slug: r.slug, title: r.title, date: fullDate(r.published), productUrl: r.productUrl,
   description: cleanDesc(r.description).slice(0, 700),
   thumb: r.thumb, thumbFallback: r.thumbFallback, wide: r.wide,
+  pitch: cfg.contactEmail && r.tab === 'reviews' ? videoMail(r.title) : '',
   platforms: r.platforms.map((x) => ({ platform: x.platform, name: x.kind === 'short' ? `${pname(x.platform)} Short` : x.kind === 'full' ? 'Full review' : pname(x.platform), url: x.url, embedUrl: x.embedUrl, vertical: x.vertical, views: x.views, likes: x.likes, comments: x.comments, week: x.week })),
   views: r.views, likes: r.likes, comments: r.comments, week: r.week,
 }));
@@ -335,7 +339,7 @@ function homeBody({ embeds }) {
     : `<p class="empty"><strong>The first reviews are on their way.</strong>Follow along on ${enabledPlatforms.map(pname).join(' and ')} in the meantime.</p>`;
   return `${header(true)}
 <main>
-<section class="hero" id="work-with-me"><div class="wrap">
+<section class="hero" id="top"><div class="wrap">
   <div class="hero__main">
     <span class="rr-label">${esc(cfg.eyebrow)}</span>
     <h1>Rob's <span class="rr-mark">Revues</span></h1>
@@ -377,15 +381,19 @@ ${grid}
   </div>
 </section>
 
-<section class="about" id="about"><div class="wrap">
+${cfg.contactEmail && cfg.brands ? `<section class="about brands" id="work-with-me" aria-labelledby="brands-title"><div class="wrap">
+  <div class="about__head"><span class="rr-label">${esc(cfg.brands.label)}</span><h2 id="brands-title">${esc(cfg.brands.title)}</h2></div>
+  <div class="about__body">
+    <p>${esc(cfg.brands.body)}</p>
+    <ul class="brands__list">${cfg.brands.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+    <div class="hero__cta"><a class="rr-btn rr-btn--primary" href="${esc(mail)}">Work with me</a><a class="hero__email" href="${esc(mail)}">${esc(cfg.contactEmail)}</a></div>
+  </div>
+</div></section>
+` : ''}<section class="about" id="about"><div class="wrap">
   <div class="about__head"><span class="rr-label">About</span><h2>${esc(cfg.aboutTitle)}</h2></div>
   <div class="about__body">
     <p>${esc(cfg.about)}</p>
     <div class="row">${enabledPlatforms.map((k) => `<a class="rr-btn rr-btn--secondary" href="${esc(cfg.platforms[k].url)}" rel="me noopener" target="_blank">Follow on ${pname(k)}</a>`).join('')}</div>
-    ${cfg.contactEmail && cfg.aboutBrands ? `<div class="about__brands">
-      <p><strong>Brands:</strong> ${esc(cfg.aboutBrands)}</p>
-      <div class="hero__cta"><a class="rr-btn rr-btn--primary" href="${esc(mail)}">Work with me</a><a class="hero__email" href="${esc(mail)}">${esc(cfg.contactEmail)}</a></div>
-    </div>` : ''}
   </div>
 </div></section>
 </main>
@@ -430,7 +438,8 @@ function reviewPage(r) {
       ${statsTable(r)}
       ${r.productUrl ? `<div style="display:flex;flex-direction:column;gap:8px;max-width:360px"><a class="rr-btn rr-btn--primary" href="${esc(r.productUrl)}" rel="sponsored nofollow noopener" target="_blank">See on Amazon${icon.out}</a><p class="rr-disclosure" style="margin:0">Affiliate link. I may earn a commission.</p></div>` : ''}
       ${desc ? `<p class="sheet__desc" style="max-height:none">${esc(desc)}</p>` : ''}
-      <div class="row">${r.platforms.map((x) => `<a class="rr-btn rr-btn--secondary rr-btn--sm" href="${esc(x.url)}" target="_blank" rel="noopener">Watch on ${pname(x.platform)}</a>`).join('')}</div>
+      <div class="row">${r.platforms.map((x) => `<a class="rr-btn rr-btn--secondary rr-btn--sm" href="${esc(x.url)}" target="_blank" rel="noopener">${x.kind === 'full' ? 'Watch full review' : `Watch on ${pname(x.platform)}${x.kind === 'short' ? ' Short' : ''}`}</a>`).join('')}</div>
+      ${cfg.contactEmail && r.tab === 'reviews' ? `<p class="video-pitch"><strong>Brands &amp; businesses:</strong> want a video like this for your product? <a href="${esc(videoMail(r.title))}">Work with me</a></p>` : ''}
     </article>
   </div>
 </div></main>

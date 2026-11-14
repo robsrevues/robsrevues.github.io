@@ -8,7 +8,16 @@
   "description": "Honest, family-friendly product reviews from Rob, an elder millennial husband and dad. Every YouTube and TikTok review in one place, with real numbers updated daily.",
   "aboutTitle": "I'm Rob. Gloriously average dad, endless hobbyist, and basically your customer, on camera.",
   "about": "I'm an elder millennial husband and dad who picks up a new hobby every season: music gear, kitchen gadgets, truck upgrades, holiday decor. That range means I can make your product feel at home in a real house, used by a real family, and explained in plain English. Most videos are under two minutes, and everything stays family-friendly.",
-  "aboutBrands": "Want your product in front of people who actually buy things? I make UGC that feels like a recommendation from a friend, because that's basically what it is. Reviews, demos, unboxings and ads, shot in 4K, vertical or horizontal.",
+  "brands": {
+    "label": "Brands & businesses",
+    "title": "Let's put your product in a real home.",
+    "body": "Want your product in front of people who actually buy things? I make UGC that feels like a recommendation from a friend, because that's basically what it is.",
+    "points": [
+      "Reviews, demos, unboxings and ads",
+      "Shot in 4K, vertical or horizontal",
+      "Posted to YouTube, TikTok and Amazon, or delivered as raw files for your own ads"
+    ]
+  },
   "pitch": {
     "video": "/media/rob-intro.mp4",
     "poster": "/media/pitch-poster.jpg",
