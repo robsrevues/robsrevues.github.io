@@ -1,5 +1,28 @@
 [
   {
+    "key": "youtube:1GZCIxVMCCI",
+    "platform": "youtube",
+    "id": "1GZCIxVMCCI",
+    "url": "https://www.youtube.com/watch?v=1GZCIxVMCCI",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/1GZCIxVMCCI?autoplay=1&rel=0&playsinline=1",
+    "title": "Ninja | Professional Blender: Why Did We Buy It TWICE? Review",
+    "description": "Our first Ninja blender set was a wedding gift, and we used it for about 10 years before the motor finally burnt out. We loved it so much we bought another one, and this set is five years old now and still gets used every week. The big pitcher handles bulk smoothies and margaritas, the processor bowl makes our homemade salsa, and the 16 oz single serve cups are about 90% of what we actually use. Full disclosure: I've never touched the dough attachment.\n\nGet the Ninja Professional Blender here: https://link.amazon/B0ee32uSA\n*As an Amazon Associate I earn from qualifying purchases.\n#ninjablender #blenderreview #kitchenreview #amazonfinds #robsrevues",
+    "publishedAt": "2026-11-18T16:00:04Z",
+    "durationSec": 75,
+    "thumbVertical": null,
+    "thumbWide": "https://i.ytimg.com/vi/1GZCIxVMCCI/maxresdefault.jpg",
+    "thumb": "https://i.ytimg.com/vi/1GZCIxVMCCI/maxresdefault.jpg",
+    "vertical": false,
+    "stats": {
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": null
+    },
+    "firstSeen": "2026-11-18",
+    "lastSeen": "2026-11-18"
+  },
+  {
     "key": "youtube:ttBVwCVh6tQ",
     "platform": "youtube",
     "id": "ttBVwCVh6tQ",
@@ -14,7 +37,7 @@
     "thumb": "https://i.ytimg.com/vi/ttBVwCVh6tQ/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 16,
+      "views": 26,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -37,7 +60,7 @@
     "thumb": "https://i.ytimg.com/vi/qHN8ouOlj2c/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 7,
+      "views": 8,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -60,7 +83,7 @@
     "thumb": "https://i.ytimg.com/vi/w50AFYufhE0/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 113,
+      "views": 136,
       "likes": 1,
       "comments": 0,
       "shares": null
@@ -83,7 +106,7 @@
     "thumb": "https://i.ytimg.com/vi/6jzzEe7r8-U/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 13,
+      "views": 14,
       "likes": 0,
       "comments": 1,
       "shares": null
@@ -175,7 +198,7 @@
     "thumb": "https://i.ytimg.com/vi/lqs17HPx0Tk/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 32,
+      "views": 33,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -266,7 +289,7 @@
     "thumb": "https://i.ytimg.com/vi/6DN5yWg-5Jk/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 30,
+      "views": 32,
       "likes": 1,
       "comments": 0,
       "shares": null
@@ -425,7 +448,7 @@
     "thumb": "https://i.ytimg.com/vi/pgPxMIUEno4/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 3,
+      "views": 4,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -448,7 +471,7 @@
     "thumb": "https://i.ytimg.com/vi/638wLmZOsOI/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 2,
+      "views": 3,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -471,7 +494,7 @@
     "thumb": "https://i.ytimg.com/vi/aCOSYOTjrgs/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 2,
+      "views": 3,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -763,7 +786,7 @@
     "thumb": "https://i.ytimg.com/vi/qe4jJw6nCK0/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 714,
+      "views": 726,
       "likes": 4,
       "comments": 0,
       "shares": null
@@ -853,7 +876,7 @@
     "thumb": "https://i.ytimg.com/vi/M0NIIDiKyco/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 227,
+      "views": 229,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -1213,7 +1236,7 @@
     "thumb": "https://i.ytimg.com/vi/ZXM5s9ubKeU/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 117,
+      "views": 118,
       "likes": 0,
       "comments": 1,
       "shares": null
@@ -1236,7 +1259,7 @@
     "thumb": "https://i.ytimg.com/vi/Enjp4mjuOOM/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 72,
+      "views": 73,
       "likes": 1,
       "comments": 4,
       "shares": null
