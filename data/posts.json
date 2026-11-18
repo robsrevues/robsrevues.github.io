@@ -1,5 +1,28 @@
 [
   {
+    "key": "youtube:ttBVwCVh6tQ",
+    "platform": "youtube",
+    "id": "ttBVwCVh6tQ",
+    "url": "https://www.youtube.com/watch?v=ttBVwCVh6tQ",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/ttBVwCVh6tQ?autoplay=1&rel=0&playsinline=1",
+    "title": "Can a 2-minute banana smoothie taste like a MILKSHAKE? #shorts #ninja #gift #blender",
+    "description": "Frozen banana, vanilla protein, Greek yogurt. About two minutes in the Ninja single serve cup. Blender here: https://link.amazon/B0ee32uSA\nAs an Amazon Associate I earn from qualifying purchases.\n#shorts #smoothie #ninjablender #proteinsmoothie",
+    "publishedAt": "2026-11-17T18:00:35Z",
+    "durationSec": 75,
+    "thumbVertical": "https://i.ytimg.com/vi/ttBVwCVh6tQ/maxresdefault.jpg",
+    "thumbWide": "https://i.ytimg.com/vi/ttBVwCVh6tQ/maxresdefault.jpg",
+    "thumb": "https://i.ytimg.com/vi/ttBVwCVh6tQ/maxresdefault.jpg",
+    "vertical": true,
+    "stats": {
+      "views": 12,
+      "likes": 0,
+      "comments": 0,
+      "shares": null
+    },
+    "firstSeen": "2026-11-17",
+    "lastSeen": "2026-11-17"
+  },
+  {
     "key": "youtube:qHN8ouOlj2c",
     "platform": "youtube",
     "id": "qHN8ouOlj2c",
@@ -14,7 +37,7 @@
     "thumb": "https://i.ytimg.com/vi/qHN8ouOlj2c/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 1,
+      "views": 3,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -37,7 +60,7 @@
     "thumb": "https://i.ytimg.com/vi/w50AFYufhE0/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 56,
+      "views": 86,
       "likes": 1,
       "comments": 0,
       "shares": null
@@ -60,7 +83,7 @@
     "thumb": "https://i.ytimg.com/vi/6jzzEe7r8-U/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 11,
+      "views": 12,
       "likes": 0,
       "comments": 1,
       "shares": null
@@ -106,7 +129,7 @@
     "thumb": "https://i.ytimg.com/vi/bGGMseXP6pI/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 6,
+      "views": 8,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -129,7 +152,7 @@
     "thumb": "https://i.ytimg.com/vi/3mkglrhgq1A/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 233,
+      "views": 234,
       "likes": 3,
       "comments": 0,
       "shares": null
@@ -152,7 +175,7 @@
     "thumb": "https://i.ytimg.com/vi/lqs17HPx0Tk/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 28,
+      "views": 29,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -220,7 +243,7 @@
     "thumb": "https://i.ytimg.com/vi/9HiE5h7Jlv0/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 246,
+      "views": 247,
       "likes": 2,
       "comments": 0,
       "shares": null
@@ -266,7 +289,7 @@
     "thumb": "https://i.ytimg.com/vi/k-ew2KCrDdo/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 29,
+      "views": 32,
       "likes": 1,
       "comments": 0,
       "shares": null
@@ -335,7 +358,7 @@
     "thumb": "https://i.ytimg.com/vi/0ZwFeg0qlUU/maxresdefault.jpg",
     "vertical": false,
     "stats": {
-      "views": 5,
+      "views": 6,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -516,7 +539,7 @@
     "thumb": "https://i.ytimg.com/vi/mo4VaE_4UXQ/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 35,
+      "views": 36,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -740,7 +763,7 @@
     "thumb": "https://i.ytimg.com/vi/qe4jJw6nCK0/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 685,
+      "views": 696,
       "likes": 4,
       "comments": 0,
       "shares": null
@@ -830,7 +853,7 @@
     "thumb": "https://i.ytimg.com/vi/M0NIIDiKyco/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 224,
+      "views": 225,
       "likes": 0,
       "comments": 0,
       "shares": null
@@ -898,7 +921,7 @@
     "thumb": "https://i.ytimg.com/vi/t5Zj1C1ZDFM/maxresdefault.jpg",
     "vertical": true,
     "stats": {
-      "views": 224,
+      "views": 228,
       "likes": 1,
       "comments": 0,
       "shares": null
